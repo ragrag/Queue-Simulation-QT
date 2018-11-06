@@ -12,6 +12,10 @@ System::System(vector <int>  arrivalTime, vector <double> probabilityArrival, ve
     buildSystem(samples);
 }
 
+System::System()
+{
+
+}
 void System::buildTables() {
     cumulativeArrival.clear();
     cumulativeService.clear();
@@ -163,8 +167,8 @@ Result System::calculateSystem() {
     int idleInside = 0;
     int maxInsideQueue = 1;
 
-    int numDrivein = driveInQueue.size();
-    int numInside = insideQueue.size();
+    int numDrivein =(int) driveInQueue.size();
+    int numInside = (int)insideQueue.size();
     float probInside =(float) numInside*((float) 100/tasks.size());
 
     for (auto t : driveInQueue)

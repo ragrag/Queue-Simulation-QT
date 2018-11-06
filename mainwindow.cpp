@@ -6,11 +6,16 @@
 #include <string>
 #include <QString>
 #include <QStringListModel>
+#include <QStringList>
+#include <QTableWidgetItem>
+
+vector < pair<System,Result> > runList;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     srand(time(NULL));
     if(!ui->customRunsCheckbox->isChecked())
     {
@@ -33,30 +38,21 @@ void MainWindow::on_beginSimulationBtn_clicked()
 
         vector <int> serviceTime = { 1,2,3,4};
         vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 };
-
-
-
-
-
-        int samples;
+        int jobs;
         int runs;
-
-
         if(ui->customRunsCheckbox->isChecked())
         {
             runs =  ui->customRunsText->toPlainText().toInt();
-            samples = ui->customJobsText->toPlainText().toInt();
+            jobs = ui->customJobsText->toPlainText().toInt();
 
         }
         else {
-            samples = 100;
+            jobs = 100;
             runs = 100;
         }
 
-        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService,samples);
-
+        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService,jobs);
         system.getTables();
-
         cout << endl;
         cout << "taskID   Interarrival Time   Arrival time   serviceTime   Service Begin       waiting   Service End     Time Spent \t     Idle\n";
         for (auto t : system.tasks)
@@ -78,10 +74,11 @@ void MainWindow::on_beginSimulationBtn_clicked()
 cout<<endl;
 
         Result finalResult= Result();
-        vector < pair<System,Result> > runList;
+        runList.clear();
+         ui->runsList->clear();
         for (int i = 0;i < runs;i++)
         {
-            system.buildSystem(samples);
+            system.buildSystem(jobs);
             Result run = system.calculateSystem();
             finalResult = finalResult+run ;
             runList.push_back(make_pair(system,run));
@@ -90,14 +87,17 @@ cout<<endl;
         finalResult = finalResult / runs;
 
 
-
-        ui->resultTextBox->setText("Results of : " + QString::number(runs) + " Runs, with : " + QString::number(samples) + " sampless\n"+
-                + "\nservice drive in:\n" + QString::number(finalResult.avgSvcDrivein) + "\nservice inside:\n" + QString::number(finalResult.avgSvcInside)
-                 +"\ndrive in waiting:\n " + QString::number(finalResult.avgWaitingDrivein) + "\nwaiting inside: " + QString::number(finalResult.avgWaitingInside)
-                    + "\nmax inside queue:\n " + QString::number(finalResult.maxQueueLength) + "\nprobability inside :\n " + QString::number(finalResult.probInside) + "%"
-                    + "\nidle inside:\n " + QString::number(finalResult.idleTime) +"\n");
-
-
+        ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
+QStringList lst;
+lst <<"Service drive in"<<"Service Inside"<<"drive in waiting"<<"Inside waiting"<<"Max inside Queue"<<"Probability inside"<<"Idle inside";
+ ui->resultsTable->setColumnCount(1);
+ ui->resultsTable->setRowCount(7);
+ ui->resultsTable->setVerticalHeaderLabels(lst);
+ for(int i=0;i<7;i++)
+ {
+     ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=5 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
+ }
+ ui->resultsTable->horizontalHeader()->setVisible(false);
 
 
 }
@@ -116,4 +116,12 @@ void MainWindow::on_customRunsCheckbox_toggled(bool checked)
         ui->customJobsText->setText("");
 
     }
+}
+
+void MainWindow::on_runsBtn_clicked()
+{
+int idx =ui->runsList->currentIndex().row();
+    cout<<idx<<endl;
+      runWindowObj = new runWindow(this,runList[idx].first,runList[idx].second);
+      runWindowObj->show();
 }

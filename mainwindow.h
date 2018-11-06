@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "runwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,8 +21,11 @@ private slots:
 
     void on_customRunsCheckbox_toggled(bool checked);
 
+    void on_runsBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
+    runWindow *runWindowObj;
 };
 
 #endif // MAINWINDOW_H

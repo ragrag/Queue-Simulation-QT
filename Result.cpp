@@ -21,6 +21,21 @@ Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,fl
     this->probInside= probInside;
     this->idleTime= idleTime;
 }
+
+float Result::operator[] (int i)
+{
+  switch (i) {
+  case 0: return avgSvcDrivein;
+  case 1: return avgSvcInside;
+  case 2: return avgWaitingDrivein;
+  case 3: return avgWaitingInside;
+  case 4: return maxQueueLength;
+  case 5: return probInside;
+  case 6: return idleTime;
+  default: return -1;
+  }
+}
+
 Result Result::operator+(Result other)
 {
 

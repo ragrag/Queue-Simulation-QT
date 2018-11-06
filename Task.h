@@ -18,6 +18,7 @@ public:
 
     void print();
     Task(int,int,int,int,int,int,int,int,int);
+    int operator[] (int i);
     ~Task();
 };
 

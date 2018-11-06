@@ -16,6 +16,22 @@ Task::Task(int taskID, int interarrivalTime, int arrivalTime, int serviceTime, i
 
 }
 
+int Task::operator[] (int i)
+{
+  switch (i) {
+    case 0: return taskID;
+    case 1: return interarrivalTime;
+    case 2: return arrivalTime;
+  case 3: return serviceTime;
+  case 4: return timeServiceBegins;
+  case 5: return waitingTime;
+  case 6: return timeServiceEnds;
+  case 7: return timeSpentInSystem;
+  case 8: return idleTime;
+    default: return -1;
+  }
+}
+
 void Task::print()
 {
 

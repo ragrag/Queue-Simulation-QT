@@ -16,11 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     System.cpp \
     Result.cpp \
-    task.cpp
+    task.cpp \
+    runwindow.cpp \
 
 HEADERS  += mainwindow.h \
     System.h \
     Result.h \
-    task.h
+    task.h \
+    runwindow.h \
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    runwindow.ui

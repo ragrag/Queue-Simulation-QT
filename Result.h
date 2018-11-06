@@ -19,6 +19,7 @@ public:
     Result operator/(int);
     Result();
     Result(float, float, float,float ,int, float, int);
+    float operator[] (int i);
     ~Result();
 };
 

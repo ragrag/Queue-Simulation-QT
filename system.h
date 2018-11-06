@@ -30,6 +30,7 @@ public:
     Result result;
 
     System(vector<int>,vector<double>,vector<int>,vector<double>,int);
+    System();
     int	getArrivalTime();
     int	getServiceTime();
     void buildSystem(int);
