@@ -5,13 +5,18 @@
 #include "System.h"
 #include <string>
 #include <QString>
+#include <QStringListModel>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     srand(time(NULL));
+    if(!ui->customRunsCheckbox->isChecked())
+    {
+        ui->customRunsText->setEnabled(false);
+        ui->customJobsText->setEnabled(false);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -28,8 +33,25 @@ void MainWindow::on_beginSimulationBtn_clicked()
 
         vector <int> serviceTime = { 1,2,3,4};
         vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 };
-        int samples = 10;
-        int runs = 100;
+
+
+
+
+
+        int samples;
+        int runs;
+
+
+        if(ui->customRunsCheckbox->isChecked())
+        {
+            runs =  ui->customRunsText->toPlainText().toInt();
+            samples = ui->customJobsText->toPlainText().toInt();
+
+        }
+        else {
+            samples = 100;
+            runs = 100;
+        }
 
         System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService,samples);
 
@@ -56,21 +78,42 @@ void MainWindow::on_beginSimulationBtn_clicked()
 cout<<endl;
 
         Result finalResult= Result();
-
+        vector < pair<System,Result> > runList;
         for (int i = 0;i < runs;i++)
         {
             system.buildSystem(samples);
-            finalResult = finalResult+ system.calculateSystem();
+            Result run = system.calculateSystem();
+            finalResult = finalResult+run ;
+            runList.push_back(make_pair(system,run));
+             ui->runsList->addItem("Run :"+QString::number(i+1));
         }
         finalResult = finalResult / runs;
 
+
+
         ui->resultTextBox->setText("Results of : " + QString::number(runs) + " Runs, with : " + QString::number(samples) + " sampless\n"+
                 + "\nservice drive in:\n" + QString::number(finalResult.avgSvcDrivein) + "\nservice inside:\n" + QString::number(finalResult.avgSvcInside)
-                    + "\ndrive in waiting:\n " + QString::number(finalResult.avgWaitingDrivein) + "\nwaiting inside:\ " + QString::number(finalResult.avgWaitingInside)
+                 +"\ndrive in waiting:\n " + QString::number(finalResult.avgWaitingDrivein) + "\nwaiting inside: " + QString::number(finalResult.avgWaitingInside)
                     + "\nmax inside queue:\n " + QString::number(finalResult.maxQueueLength) + "\nprobability inside :\n " + QString::number(finalResult.probInside) + "%"
                     + "\nidle inside:\n " + QString::number(finalResult.idleTime) +"\n");
 
 
 
 
+}
+
+void MainWindow::on_customRunsCheckbox_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->customRunsText->setEnabled(true);
+        ui->customJobsText->setEnabled(true);
+    }
+    else {
+        ui->customRunsText->setEnabled(false);
+        ui->customJobsText->setEnabled(false);
+        ui->customRunsText->setText("");
+        ui->customJobsText->setText("");
+
+    }
 }

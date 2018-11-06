@@ -18,6 +18,8 @@ public:
 private slots:
     void on_beginSimulationBtn_clicked();
 
+    void on_customRunsCheckbox_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
