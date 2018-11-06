@@ -9,7 +9,6 @@ runWindow::runWindow(QWidget *parent, System sys, Result res) :
     this->system = make_pair(sys,res);
 
 
-
     QStringList lst;
     lst <<"taskID"<<"Interarrival Time "<<"Arrival time"<<"Service Time"<<"Service Begin "
        <<"Waiting"<<"Service end"<<"Time Spent "<<"Idle";

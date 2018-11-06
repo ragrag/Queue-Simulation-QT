@@ -88,11 +88,7 @@ cout<<endl;
 
 
         ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
-QStringList lst;
-lst <<"Service drive in"<<"Service Inside"<<"drive in waiting"<<"Inside waiting"<<"Max inside Queue"<<"Probability inside"<<"Idle inside";
- ui->resultsTable->setColumnCount(1);
- ui->resultsTable->setRowCount(7);
- ui->resultsTable->setVerticalHeaderLabels(lst);
+
  for(int i=0;i<7;i++)
  {
      ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=5 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
