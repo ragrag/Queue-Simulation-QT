@@ -1,7 +1,7 @@
 #include "System.h"
 #include "Task.h"
 
-System::System(vector <int>  arrivalTime, vector <double> probabilityArrival, vector <int> serviceTime, vector <double> probabilityService,int samples)
+System::System(vector <int>  arrivalTime, vector <double> probabilityArrival, vector <int> serviceTime, vector <double> probabilityService)
 {
     this->arrivalTime = arrivalTime;
     this->probabilityArrival = probabilityArrival;
@@ -9,7 +9,6 @@ System::System(vector <int>  arrivalTime, vector <double> probabilityArrival, ve
     this->probabilityService = probabilityService;
     result = Result();
     buildTables();
-    buildSystem(samples);
 }
 
 System::System()
@@ -54,6 +53,8 @@ void System::getTables()
 void System::buildSystem(int samples)
 {
     clear();
+        //int randDig[] = { 36,51,83,67,77,89,11,60,55,42};
+         //int randDig2[] = { 15,1,90,72,74,51,6,89,31,29};
     for (int i = 0;i < samples;i++)
     {
         //cout << " i :" << i << endl;
@@ -121,8 +122,10 @@ void System::buildSystem(int samples)
 int System::getArrivalTime()
 {
 
+
     int random = rand() % 100 + 1;
     //cout << "Arrival rand :" << random << "\n";
+    //int random = at;
     for (int i = 0;i < cumulativeArrival.size();i++)
     {
         if (i == 0)
@@ -143,12 +146,15 @@ int System::getServiceTime()
 
     int random = rand() % 100 + 1;
     //cout << "Service rand :" << random << "\n";
+    //int random = st;
     for (int i = 0;i < cumulativeService.size();i++)
     {
         if (i == 0)
         {
             if (random >= 1 && random <= cumulativeService[i])
+            {
                 return serviceTime[i];
+            }
         }
         else if (random >cumulativeService[i - 1] && random <= cumulativeService[i]) {
             return serviceTime[i];
@@ -170,7 +176,6 @@ Result System::calculateSystem() {
     int numDrivein =(int) driveInQueue.size();
     int numInside = (int)insideQueue.size();
     float probInside =(float) numInside*((float) 100/tasks.size());
-
     for (auto t : driveInQueue)
     {
         driveinSvc += t.serviceTime;
@@ -199,7 +204,7 @@ Result System::calculateSystem() {
             }
         }
     }
-    result = Result(driveinSvc / numDrivein, numInside==0?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside, maxInsideQueue, probInside, idleInside);
+    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside, idleInside);
 
     return result;
 }

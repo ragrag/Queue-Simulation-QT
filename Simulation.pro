@@ -18,12 +18,18 @@ SOURCES += main.cpp\
     Result.cpp \
     task.cpp \
     runwindow.cpp \
+    probabilitytable.cpp \
+    charts.cpp
 
 HEADERS  += mainwindow.h \
     System.h \
     Result.h \
     task.h \
     runwindow.h \
+    probabilitytable.h \
+    charts.h
 
 FORMS    += mainwindow.ui \
-    runwindow.ui
+    runwindow.ui \
+    charts.ui \
+    probabilitytable.ui

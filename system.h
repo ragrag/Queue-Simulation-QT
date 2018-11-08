@@ -10,7 +10,11 @@ using namespace std;
 
 class System
 {
-private:
+
+
+
+
+public:
     vector <int>  arrivalTime;
     vector <double> probabilityArrival;
     vector <int> serviceTime;
@@ -18,18 +22,12 @@ private:
     vector <double> cumulativeArrival;
     vector <double> cumulativeService;
 
-
-
-
-public:
-
-
     vector <Task> tasks;
     vector <Task> driveInQueue;
     vector <Task> insideQueue;
     Result result;
 
-    System(vector<int>,vector<double>,vector<int>,vector<double>,int);
+    System(vector<int>,vector<double>,vector<int>,vector<double>);
     System();
     int	getArrivalTime();
     int	getServiceTime();

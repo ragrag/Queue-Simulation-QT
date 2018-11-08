@@ -8,8 +8,10 @@
 #include <QStringListModel>
 #include <QStringList>
 #include <QTableWidgetItem>
+#include "probabilitytable.h"
 
 vector < pair<System,Result> > runList;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -51,31 +53,13 @@ void MainWindow::on_beginSimulationBtn_clicked()
             runs = 100;
         }
 
-        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService,jobs);
-        system.getTables();
+        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);
         cout << endl;
-        cout << "taskID   Interarrival Time   Arrival time   serviceTime   Service Begin       waiting   Service End     Time Spent \t     Idle\n";
-        for (auto t : system.tasks)
-        {
-            t.print();
-        }
-        cout << endl << "Drive in Queue" << endl;
-        for (auto t : system.driveInQueue)
-        {
-            t.print();
-        }
 
-        cout << endl << "Inside Queue" << endl;
-        for (auto t : system.insideQueue)
-        {
-            t.print();
-        }
-
-cout<<endl;
 
         Result finalResult= Result();
         runList.clear();
-         ui->runsList->clear();
+        ui->runsList->clear();
         for (int i = 0;i < runs;i++)
         {
             system.buildSystem(jobs);
@@ -116,8 +100,24 @@ void MainWindow::on_customRunsCheckbox_toggled(bool checked)
 
 void MainWindow::on_runsBtn_clicked()
 {
+
 int idx =ui->runsList->currentIndex().row();
-    cout<<idx<<endl;
+if(idx!=-1)
+{
       runWindowObj = new runWindow(this,runList[idx].first,runList[idx].second);
       runWindowObj->show();
+}
+}
+
+void MainWindow::on_probabilityTableBtn_clicked()
+{
+    vector <int>  arrivalTime = { 0,1,2,3,4,5 };
+    vector <double> probabilityArrival = {0.09, 0.17 , 0.27, 0.20, 0.15, 0.12};
+
+    vector <int> serviceTime = { 1,2,3,4};
+    vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 };
+    System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);
+          probabilityTableObj = new ProbabilityTable(this,system);
+          probabilityTableObj->show();
+
 }

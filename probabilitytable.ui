@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProbabilityTable</class>
+ <widget class="QMainWindow" name="ProbabilityTable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>521</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTableWidget" name="arrivalTable">
+       <property name="rowCount">
+        <number>6</number>
+       </property>
+       <attribute name="horizontalHeaderVisible">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Interarrival Time</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Probability</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cumulative</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Range</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="serviceTable">
+       <property name="rowCount">
+        <number>4</number>
+       </property>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>New Row</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Service Time</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Probability</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cumulative</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Range</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -13,15 +13,14 @@ runWindow::runWindow(QWidget *parent, System sys, Result res) :
     lst <<"taskID"<<"Interarrival Time "<<"Arrival time"<<"Service Time"<<"Service Begin "
        <<"Waiting"<<"Service end"<<"Time Spent "<<"Idle";
      ui->driveinTable->setColumnCount(9);
-     ui->driveinTable->setRowCount((int)system.first.driveInQueue.size());
+     ui->driveinTable->setRowCount((int)system.first.driveInQueue.size() >0 ? (int)system.first.driveInQueue.size() : 0);
      ui->driveinTable->setHorizontalHeaderLabels(lst);
      ui->driveinTable->verticalHeader()->setVisible(false);
 
      ui->insideTable->setColumnCount(9);
-     ui->insideTable->setRowCount((int)system.first.insideQueue.size());
+     ui->insideTable->setRowCount((int)system.first.insideQueue.size() >0?(int)system.first.insideQueue.size():0);
      ui->insideTable->setHorizontalHeaderLabels(lst);
      ui->insideTable->verticalHeader()->setVisible(false);
-
 
      for(int i=0;i< max((int) system.first.driveInQueue.size(),(int)system.first.insideQueue.size());i++)
      {

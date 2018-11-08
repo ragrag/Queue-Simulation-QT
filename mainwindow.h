@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "runwindow.h"
-
+#include "probabilitytable.h"
 namespace Ui {
 class MainWindow;
 }
@@ -23,9 +23,12 @@ private slots:
 
     void on_runsBtn_clicked();
 
+    void on_probabilityTableBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     runWindow *runWindowObj;
+    ProbabilityTable *probabilityTableObj;
 };
 
 #endif // MAINWINDOW_H
