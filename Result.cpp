@@ -29,9 +29,9 @@ float Result::operator[] (int i)
   case 1: return avgSvcInside;
   case 2: return avgWaitingDrivein;
   case 3: return avgWaitingInside;
-  case 4: return maxQueueLength;
+  case 4: return (float) maxQueueLength;
   case 5: return probInside;
-  case 6: return idleTime;
+  case 6: return (float) idleTime;
   default: return -1;
   }
 }
