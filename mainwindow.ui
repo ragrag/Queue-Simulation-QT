@@ -115,7 +115,7 @@
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
+           <enum>Qt::ScrollBarAlwaysOn</enum>
           </property>
           <property name="showGrid">
            <bool>true</bool>
@@ -140,7 +140,7 @@
           </attribute>
           <row>
            <property name="text">
-            <string>Service drive in</string>
+            <string>Avg Service Time Drive-in</string>
            </property>
            <property name="font">
             <font>
@@ -153,7 +153,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Service Inside</string>
+            <string>Avg Service Time Inside</string>
            </property>
            <property name="font">
             <font>
@@ -164,7 +164,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Waiting drive in</string>
+            <string>Avg Waiting Drive-in</string>
            </property>
            <property name="font">
             <font>
@@ -175,7 +175,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Waiting inside</string>
+            <string>Avg Waiting Inside</string>
            </property>
            <property name="font">
             <font>
@@ -186,7 +186,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Max inside Queue</string>
+            <string>Max Inside Queue Length</string>
            </property>
            <property name="font">
             <font>
@@ -197,7 +197,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Probability Inside</string>
+            <string>Probability To Wait Inside</string>
            </property>
            <property name="font">
             <font>
@@ -208,7 +208,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Idle time Inside</string>
+            <string>Idle Time Inside</string>
            </property>
            <property name="font">
             <font>
@@ -219,12 +219,12 @@
           </row>
           <row>
            <property name="text">
-            <string/>
+            <string>Avg Waiting Drive-in (Two Cars)</string>
            </property>
           </row>
           <row>
            <property name="text">
-            <string/>
+            <string>Avg Waiting Inside (Two Cars)</string>
            </property>
           </row>
           <column/>
@@ -279,7 +279,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>150</height>
+            <height>100</height>
            </size>
           </property>
          </spacer>
@@ -356,7 +356,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>150</height>
+            <height>100</height>
            </size>
           </property>
          </spacer>
@@ -366,8 +366,6 @@
      </layout>
     </item>
    </layout>
-   <zorder>runsList</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
    <zorder></zorder>
    <zorder>beginSimulationBtn</zorder>
   </widget>

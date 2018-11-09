@@ -32,6 +32,7 @@ public:
     int	getArrivalTime();
     int	getServiceTime();
     void buildSystem(int);
+    void buildSystemTwoCars(int);
     void buildTables();
     void getTables();
     Result calculateSystem();

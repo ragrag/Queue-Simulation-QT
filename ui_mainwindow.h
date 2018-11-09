@@ -161,7 +161,7 @@ public:
         resultsTable->setSizePolicy(sizePolicy2);
         resultsTable->setMaximumSize(QSize(300, 16777215));
         resultsTable->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        resultsTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        resultsTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         resultsTable->setShowGrid(true);
         resultsTable->setGridStyle(Qt::SolidLine);
         resultsTable->setWordWrap(true);
@@ -191,7 +191,7 @@ public:
 
         verticalLayout->addWidget(chartsBtn);
 
-        verticalSpacer = new QSpacerItem(20, 150, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -232,7 +232,7 @@ public:
 
         verticalLayout_3->addWidget(runsBtn);
 
-        verticalSpacer_2 = new QSpacerItem(20, 150, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer_2 = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_3->addItem(verticalSpacer_2);
 
@@ -243,7 +243,6 @@ public:
         verticalLayout_5->addLayout(horizontalLayout_7);
 
         MainWindow->setCentralWidget(centralWidget);
-        runsList->raise();
         beginSimulationBtn->raise();
 
         retranslateUi(MainWindow);
@@ -260,19 +259,23 @@ public:
         beginSimulationBtn->setText(QApplication::translate("MainWindow", "Begin simulation", Q_NULLPTR));
         resultsLabel->setText(QApplication::translate("MainWindow", "Results", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem = resultsTable->verticalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Service drive in", Q_NULLPTR));
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Avg Service Time Drive-in", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = resultsTable->verticalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "Service Inside", Q_NULLPTR));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "Avg Service Time Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem2 = resultsTable->verticalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Waiting drive in", Q_NULLPTR));
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Avg Waiting Drive-in", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem3 = resultsTable->verticalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Waiting inside", Q_NULLPTR));
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Avg Waiting Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem4 = resultsTable->verticalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Max inside Queue", Q_NULLPTR));
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Max Inside Queue Length", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem5 = resultsTable->verticalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Probability Inside", Q_NULLPTR));
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Probability To Wait Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem6 = resultsTable->verticalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "Idle time Inside", Q_NULLPTR));
+        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "Idle Time Inside", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem7 = resultsTable->verticalHeaderItem(7);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "Avg Waiting Drive-in (Two Cars)", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem8 = resultsTable->verticalHeaderItem(8);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Avg Waiting Inside (Two Cars)", Q_NULLPTR));
         probabilityTableBtn->setText(QApplication::translate("MainWindow", "View Probability Tables", Q_NULLPTR));
         chartsBtn->setText(QApplication::translate("MainWindow", "View Charts", Q_NULLPTR));
         runsLabel->setText(QApplication::translate("MainWindow", "Runs", Q_NULLPTR));

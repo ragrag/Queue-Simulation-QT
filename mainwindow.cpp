@@ -58,6 +58,7 @@ void MainWindow::on_beginSimulationBtn_clicked()
 
 
         Result finalResult= Result();
+        Result finalResultTwoCars= Result();
         runList.clear();
         ui->runsList->clear();
         for (int i = 0;i < runs;i++)
@@ -67,8 +68,13 @@ void MainWindow::on_beginSimulationBtn_clicked()
             finalResult = finalResult+run ;
             runList.push_back(make_pair(system,run));
              ui->runsList->addItem("Run :"+QString::number(i+1));
+
+             system.buildSystemTwoCars(jobs);
+             run = system.calculateSystem();
+             finalResultTwoCars = finalResultTwoCars + run;
         }
         finalResult = finalResult / runs;
+        finalResultTwoCars = finalResultTwoCars / runs;
 
 
         ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
@@ -77,6 +83,8 @@ void MainWindow::on_beginSimulationBtn_clicked()
  {
      ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=5 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
  }
+  ui->resultsTable->setItem(7,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
+  ui->resultsTable->setItem(8,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
  ui->resultsTable->horizontalHeader()->setVisible(false);
 
 

@@ -62,11 +62,11 @@ void System::buildSystem(int samples)
         //cout << " i :" << i << endl;
         //int interArrivalTime = getArrivalTime(randDig[i]);
         //int serviceTime = getServiceTime(randDig2[i]);
-        cout<<"Customer :"<<i+1<<endl;
+        //cout<<"Customer :"<<i+1<<endl;
         int interArrivalTime = getArrivalTime();
-        cout<<"Val : "<<interArrivalTime<<endl;
+        //cout<<"Val : "<<interArrivalTime<<endl;
         int serviceTime = getServiceTime();
-        cout<<"Val : "<<serviceTime<<endl;
+        //cout<<"Val : "<<serviceTime<<endl;
         int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;
         if (i == 0)
         {
@@ -127,6 +127,83 @@ void System::buildSystem(int samples)
 
 }
 
+
+void System::buildSystemTwoCars(int samples)
+{
+    clear();
+        //int randDig[] = { 36,51,83,67,77,89,11,60,55,42};
+         //int randDig2[] = { 15,1,90,72,74,51,6,89,31,29};
+
+
+    for (int i = 0;i < samples;i++)
+    {
+        //cout << " i :" << i << endl;
+        //int interArrivalTime = getArrivalTime(randDig[i]);
+        //int serviceTime = getServiceTime(randDig2[i]);
+        //cout<<"Customer :"<<i+1<<endl;
+        int interArrivalTime = getArrivalTime();
+        //cout<<"Val : "<<interArrivalTime<<endl;
+        int serviceTime = getServiceTime();
+        //cout<<"Val : "<<serviceTime<<endl;
+        int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;
+        if (i == 0)
+        {
+            Task firstTask = Task(1, 0, 0, serviceTime, 0, 0, serviceTime, serviceTime, 0);
+            tasks.push_back(firstTask);
+            driveInQueue.push_back(firstTask);
+            continue;
+        }
+        else if ( (i == 1 || i==2 ) || (i > 2 && arrival > driveInQueue[driveInQueue.size()- 3].timeServiceEnds))
+        {
+
+            int serviceBegin;
+            if (driveInQueue.back().timeServiceEnds < arrival)
+                serviceBegin = arrival;
+            else serviceBegin = driveInQueue.back().timeServiceEnds;
+
+            int waiting;
+            if (driveInQueue.back().timeServiceEnds < arrival)
+                waiting = 0;
+            else waiting = driveInQueue.back().timeServiceEnds - arrival;
+
+            int serviceEnd = serviceBegin + serviceTime;
+            int timeSpent = serviceEnd - arrival;
+            int idle = driveInQueue.back().timeServiceEnds > arrival ? 0 : arrival - driveInQueue.back().timeServiceEnds;
+            driveInQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
+            tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
+            continue;
+        }
+        else
+        {
+
+            if (insideQueue.size() == 0)
+            {
+
+                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime,arrival));
+                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, arrival));
+                continue;
+            }
+            else {
+                int serviceBegin;
+                if (insideQueue.back().timeServiceEnds < arrival)
+                    serviceBegin = arrival;
+                else serviceBegin = insideQueue.back().timeServiceEnds;
+
+                int waiting;
+                if (insideQueue.back().timeServiceEnds < arrival)
+                    waiting = 0;
+                else waiting = insideQueue.back().timeServiceEnds - arrival;
+
+                int serviceEnd = serviceBegin + serviceTime;
+                int timeSpent = serviceEnd - arrival;
+                int idle = insideQueue.back().timeServiceEnds > arrival ? 0 : arrival - insideQueue.back().timeServiceEnds;
+                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
+                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
+            }
+        }
+    }
+
+}
 int System::getArrivalTime()
 {
 
@@ -136,7 +213,7 @@ int System::getArrivalTime()
     //int random = at;
 
     int random = rand() % 100 + 1;
-    cout<<"Random Arrival : "<<random<<endl;
+    //cout<<"Random Arrival : "<<random<<endl;
     for (int i = 0;i < cumulativeArrival.size();i++)
     {
         if (i == 0)
@@ -160,7 +237,7 @@ int System::getServiceTime()
     //int random = st;
 
     int random = rand() % 100 + 1;
-    cout<<"Random Service : "<<random<<endl;
+    //cout<<"Random Service : "<<random<<endl;
     for (int i = 0;i < cumulativeService.size();i++)
     {
         if (i == 0)
