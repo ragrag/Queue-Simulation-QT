@@ -55,11 +55,18 @@ void System::buildSystem(int samples)
     clear();
         //int randDig[] = { 36,51,83,67,77,89,11,60,55,42};
          //int randDig2[] = { 15,1,90,72,74,51,6,89,31,29};
+
+
     for (int i = 0;i < samples;i++)
     {
         //cout << " i :" << i << endl;
+        //int interArrivalTime = getArrivalTime(randDig[i]);
+        //int serviceTime = getServiceTime(randDig2[i]);
+        cout<<"Customer :"<<i+1<<endl;
         int interArrivalTime = getArrivalTime();
+        cout<<"Val : "<<interArrivalTime<<endl;
         int serviceTime = getServiceTime();
+        cout<<"Val : "<<serviceTime<<endl;
         int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;
         if (i == 0)
         {
@@ -93,8 +100,9 @@ void System::buildSystem(int samples)
 
             if (insideQueue.size() == 0)
             {
-                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, 0));
-                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, 0));
+
+                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime,arrival));
+                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, arrival));
                 continue;
             }
             else {
@@ -123,9 +131,12 @@ int System::getArrivalTime()
 {
 
 
-    int random = rand() % 100 + 1;
+
     //cout << "Arrival rand :" << random << "\n";
     //int random = at;
+
+    int random = rand() % 100 + 1;
+    cout<<"Random Arrival : "<<random<<endl;
     for (int i = 0;i < cumulativeArrival.size();i++)
     {
         if (i == 0)
@@ -144,9 +155,12 @@ int System::getArrivalTime()
 int System::getServiceTime()
 {
 
-    int random = rand() % 100 + 1;
+
     //cout << "Service rand :" << random << "\n";
     //int random = st;
+
+    int random = rand() % 100 + 1;
+    cout<<"Random Service : "<<random<<endl;
     for (int i = 0;i < cumulativeService.size();i++)
     {
         if (i == 0)
@@ -204,7 +218,7 @@ Result System::calculateSystem() {
             }
         }
     }
-    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside, idleInside);
+    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside, idleInside==0?tasks.back().timeServiceEnds :idleInside);
 
     return result;
 }

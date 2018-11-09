@@ -19,7 +19,7 @@ ProbabilityTable::ProbabilityTable(QWidget *parent,System sys) :
                  else if(j==1)
                     ui->arrivalTable->setItem(i,j,new QTableWidgetItem(QString::number(system.probabilityArrival[i])));
                  else if(j==2)
-                    ui->arrivalTable->setItem(i,j,new QTableWidgetItem(QString::number(system.cumulativeArrival[i])));
+                    ui->arrivalTable->setItem(i,j,new QTableWidgetItem(QString::number(system.cumulativeArrival[i]/100)));
 
                  else
                         ui->arrivalTable->setItem(i,j,new QTableWidgetItem( i == 0 ?  "1 - " + QString::number(system.cumulativeArrival[i])  :  QString::number(system.cumulativeArrival[i - 1] + 1) + " - " +QString::number(system.cumulativeArrival[i])));
@@ -32,7 +32,7 @@ ProbabilityTable::ProbabilityTable(QWidget *parent,System sys) :
                  else if(j==1)
                     ui->serviceTable->setItem(i,j,new QTableWidgetItem(QString::number(system.probabilityService[i])));
                  else if(j==2)
-                    ui->serviceTable->setItem(i,j,new QTableWidgetItem(QString::number(system.cumulativeService[i])));
+                    ui->serviceTable->setItem(i,j,new QTableWidgetItem(QString::number(system.cumulativeService[i]/100)));
 
                  else
                         ui->serviceTable->setItem(i,j,new QTableWidgetItem( i == 0 ?  "1 - " + QString::number(system.cumulativeService[i])  :  QString::number(system.cumulativeService[i - 1] + 1) + " - " +QString::number(system.cumulativeService[i])));
