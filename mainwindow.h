@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "runwindow.h"
 #include "probabilitytable.h"
+#include "chartwindow.h"
 namespace Ui {
 class MainWindow;
 }
@@ -25,10 +26,13 @@ private slots:
 
     void on_probabilityTableBtn_clicked();
 
+    void on_chartsBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     runWindow *runWindowObj;
-    ProbabilityTable *probabilityTableObj;
+    ProbabilityTable *probabilityTableWindow;
+    ChartWindow *chartsWindow;
 };
 
 #endif // MAINWINDOW_H

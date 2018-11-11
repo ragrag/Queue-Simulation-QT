@@ -125,7 +125,14 @@ void MainWindow::on_probabilityTableBtn_clicked()
     vector <int> serviceTime = { 1,2,3,4};
     vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 };
     System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);
-          probabilityTableObj = new ProbabilityTable(this,system);
-          probabilityTableObj->show();
+      probabilityTableWindow = new ProbabilityTable(this,system);
+      probabilityTableWindow->show();
 
+}
+
+
+void MainWindow::on_chartsBtn_clicked()
+{
+    chartsWindow = new ChartWindow(this,runList);
+    chartsWindow->show();
 }

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui charts datavisualization
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,7 +19,7 @@ SOURCES += main.cpp\
     task.cpp \
     runwindow.cpp \
     probabilitytable.cpp \
-    charts.cpp
+    chartwindow.cpp
 
 HEADERS  += mainwindow.h \
     System.h \
@@ -27,9 +27,9 @@ HEADERS  += mainwindow.h \
     task.h \
     runwindow.h \
     probabilitytable.h \
-    charts.h
+    chartwindow.h
 
 FORMS    += mainwindow.ui \
     runwindow.ui \
-    charts.ui \
-    probabilitytable.ui
+    probabilitytable.ui \
+    chartwindow.ui
