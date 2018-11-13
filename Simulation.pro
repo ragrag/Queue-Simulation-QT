@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     task.cpp \
     runwindow.cpp \
     probabilitytable.cpp \
-    chartwindow.cpp
+    chartwindow.cpp \
+    histogram.cpp
 
 HEADERS  += mainwindow.h \
     System.h \
@@ -28,9 +29,11 @@ HEADERS  += mainwindow.h \
     task.h \
     runwindow.h \
     probabilitytable.h \
-    chartwindow.h
+    chartwindow.h \
+    histogram.h
 
 FORMS    += mainwindow.ui \
     runwindow.ui \
     probabilitytable.ui \
-    chartwindow.ui
+    chartwindow.ui \
+    histogram.ui

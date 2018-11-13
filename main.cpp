@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 #include <QApplication>
-
+#include <histogram.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    histogram w;
     w.show();
 
 
