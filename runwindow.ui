@@ -54,6 +54,23 @@
     <item>
      <widget class="QTableWidget" name="resultsTable"/>
     </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="svcChartBtn">
+      <property name="text">
+       <string>Service Times Line Chart</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="arrivalChartBtn">
+      <property name="text">
+       <string>Interarrival Times Line Chart</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>

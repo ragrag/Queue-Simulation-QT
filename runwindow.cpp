@@ -57,3 +57,74 @@ runWindow::~runWindow()
 {
     delete ui;
 }
+
+void runWindow::on_svcChartBtn_clicked()
+{
+
+    QLineSeries *series = new QLineSeries();
+    for(int i=0;i< system.first.tasks.size();i++ )
+    {
+        series->append(i+1,system.first.tasks[i].serviceTime);
+    }
+
+    QValueAxis *axisX = new QValueAxis;
+    axisX->setRange(1, system.first.tasks.size());
+    axisX->setTickCount(1);
+    //axisX->setLabelFormat("%.2f");
+
+    QChart *chart = new QChart();
+    chart->legend()->hide();
+    chart->addSeries(series);
+    chart->createDefaultAxes();
+    chart->setTitle("Simple line chart example");
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->chart()->setAxisX(axisX, series);
+
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    QWidget * chartWindow = new QWidget(0);
+    QVBoxLayout *layout = new QVBoxLayout(chartWindow);
+    layout->addWidget(chartView);
+    setLayout(layout);
+    layout->activate();
+
+    chartWindow->resize(1000,400);
+    chartWindow->show();
+
+}
+
+void runWindow::on_arrivalChartBtn_clicked()
+{
+    QLineSeries *series = new QLineSeries();
+    for(int i=0;i< system.first.tasks.size();i++ )
+    {
+        series->append(i+1,system.first.tasks[i].interarrivalTime);
+    }
+
+    QValueAxis *axisX = new QValueAxis;
+    axisX->setRange(1, system.first.tasks.size());
+    axisX->setTickCount(1);
+    //axisX->setLabelFormat("%.2f");
+
+    QChart *chart = new QChart();
+    chart->legend()->hide();
+    chart->addSeries(series);
+    chart->createDefaultAxes();
+    chart->setTitle("Simple line chart example");
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->chart()->setAxisX(axisX, series);
+
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    QWidget * chartWindow = new QWidget(0);
+    QVBoxLayout *layout = new QVBoxLayout(chartWindow);
+    layout->addWidget(chartView);
+    setLayout(layout);
+    layout->activate();
+
+    chartWindow->resize(1000,400);
+    chartWindow->show();
+
+}
