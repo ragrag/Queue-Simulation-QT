@@ -195,7 +195,7 @@ void ChartWindow::on_svcAllBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgSvcAll * 10) / 10]++;
+        mp[v.second.avgSvcAll ]++;
     }
     createBarChart(mp,"average Service Time (ALL)");
 }

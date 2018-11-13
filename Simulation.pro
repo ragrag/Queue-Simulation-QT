@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 
+include (F:\qtmods\nightcharts-master\nightcharts.pri)
 QT       += core gui charts datavisualization
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -11,7 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Simulation
 TEMPLATE = app
 
-
+CONFIG += qwt
 SOURCES += main.cpp\
         mainwindow.cpp \
     System.cpp \
