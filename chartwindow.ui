@@ -40,13 +40,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -69,13 +62,6 @@
          <widget class="QPushButton" name="svcIPieBtn">
           <property name="text">
            <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_7">
-          <property name="text">
-           <string>PushButton</string>
           </property>
          </widget>
         </item>
@@ -104,13 +90,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_10">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -133,13 +112,6 @@
          <widget class="QPushButton" name="waitIPieBtn">
           <property name="text">
            <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_13">
-          <property name="text">
-           <string>PushButton</string>
           </property>
          </widget>
         </item>
@@ -168,13 +140,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_16">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -200,13 +165,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_19">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -229,13 +187,6 @@
          <widget class="QPushButton" name="idlePieBtn">
           <property name="text">
            <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_22">
-          <property name="text">
-           <string>PushButton</string>
           </property>
          </widget>
         </item>
