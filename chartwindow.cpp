@@ -28,7 +28,7 @@ void ChartWindow::on_svcDPieBtn_clicked()
     {
         mp[ truncf(v.second.avgSvcDrivein * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Service Drive-in");
+    createPieChart(mp,"average Service Drive-in");
 
 }
 
@@ -39,7 +39,7 @@ void ChartWindow::on_svcIPieBtn_clicked()
     {
         mp[ truncf(v.second.avgSvcInside * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Service Inside");
+    createPieChart(mp,"average Service Inside");
 }
 
 void ChartWindow::on_waitDPieBtn_clicked()
@@ -49,7 +49,7 @@ void ChartWindow::on_waitDPieBtn_clicked()
     {
         mp[ truncf(v.second.avgWaitingDrivein * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Waiting Drive-in");
+    createPieChart(mp,"average Waiting Drive-in");
 }
 
 void ChartWindow::on_waitIPieBtn_clicked()
@@ -59,7 +59,7 @@ void ChartWindow::on_waitIPieBtn_clicked()
     {
         mp[ truncf(v.second.avgWaitingInside * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Waiting Inside");
+    createPieChart(mp,"average Waiting Inside");
 }
 
 void ChartWindow::on_qlPieBtn_clicked()
@@ -102,7 +102,7 @@ void ChartWindow::on_svcAllPieBtn_clicked()
     {
         mp[truncf(v.second.avgSvcAll * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Service Time (ALL)");
+    createPieChart(mp,"average Service Time (ALL)");
 }
 
 
@@ -113,7 +113,7 @@ void ChartWindow::on_interPieBtn_clicked()
     {
         mp[truncf(v.second.avgInterArrival * 10) / 10]++;
     }
-    createPieChart(mp,"Avarage Interarrival Time (ALL)");
+    createPieChart(mp,"average Interarrival Time (ALL)");
 }
 
 
@@ -126,7 +126,7 @@ void ChartWindow::on_svcDBarBtn_clicked()
     {
         mp[truncf(v.second.avgSvcInside * 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Service Drive-in");
+    createBarChart(mp,"average Service Drive-in");
 }
 
 void ChartWindow::on_svcIBarBtn_clicked()
@@ -136,7 +136,7 @@ void ChartWindow::on_svcIBarBtn_clicked()
     {
         mp[truncf(v.second.avgSvcInside* 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Service Inside");
+    createBarChart(mp,"average Service Inside");
 }
 
 void ChartWindow::on_waitDBarBtn_clicked()
@@ -146,7 +146,7 @@ void ChartWindow::on_waitDBarBtn_clicked()
     {
         mp[truncf(v.second.avgWaitingDrivein* 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Waiting Drive-in");
+    createBarChart(mp,"average Waiting Drive-in");
 }
 
 void ChartWindow::on_waitIBarBtn_clicked()
@@ -156,7 +156,7 @@ void ChartWindow::on_waitIBarBtn_clicked()
     {
         mp[truncf(v.second.avgWaitingInside* 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Waiting Inside");
+    createBarChart(mp,"average Waiting Inside");
 }
 
 void ChartWindow::on_qlBarBtn_clicked()
@@ -197,7 +197,7 @@ void ChartWindow::on_svcAllBarBtn_clicked()
     {
         mp[truncf(v.second.avgSvcAll * 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Service Time (ALL)");
+    createBarChart(mp,"average Service Time (ALL)");
 }
 
 
@@ -208,7 +208,7 @@ void ChartWindow::on_interBarBtn_clicked()
     {
         mp[truncf(v.second.avgInterArrival * 10) / 10]++;
     }
-    createBarChart(mp,"Avarage Interarrival (ALL)");
+    createBarChart(mp,"average Interarrival (ALL)");
 }
 
 
