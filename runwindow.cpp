@@ -37,13 +37,14 @@ runWindow::runWindow(QWidget *parent, System sys, Result res) :
 
 
      QStringList lstRes;
-     lstRes <<"Service drive in"<<"Service Inside"<<"drive in waiting"<<"Inside waiting"<<"Max inside Queue"<<"Probability inside"<<"Idle inside";
+     lstRes <<"Avg Service Time (ALL)"<<"Avg Interarrival Time (ALL)"<<"Avg Service Time Drive-in"<<"Avg Service Time Inside"<<"Avg Waiting Time Drive-in"<<"Avg Waiting Time Inside"
+           <<"Max inside Queue"<<"Probability To Go Inside"<<"Idle Portion Inside";
       ui->resultsTable->setColumnCount(1);
-      ui->resultsTable->setRowCount(7);
+      ui->resultsTable->setRowCount(9);
       ui->resultsTable->setVerticalHeaderLabels(lstRes);
-      for(int i=0;i<7;i++)
+      for(int i=0;i<9;i++)
       {
-          ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=5 ?  QString::number(system.second[i]) : QString::number(system.second[i]) +"%" ));
+          ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=7 ?  QString::number(system.second[i]) : QString::number(system.second[i]) +"%" ));
       }
       ui->resultsTable->horizontalHeader()->setVisible(false);
 

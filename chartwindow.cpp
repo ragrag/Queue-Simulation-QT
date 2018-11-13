@@ -94,6 +94,30 @@ void ChartWindow::on_idlePieBtn_clicked()
 
 
 
+
+void ChartWindow::on_svcAllPieBtn_clicked()
+{
+    map <float,int> mp;
+    for (auto v : runList)
+    {
+        mp[truncf(v.second.avgSvcAll * 10) / 10]++;
+    }
+    createPieChart(mp,"Avarage Service Time (ALL)");
+}
+
+
+void ChartWindow::on_interPieBtn_clicked()
+{
+    map <float,int> mp;
+    for (auto v : runList)
+    {
+        mp[truncf(v.second.avgInterArrival * 10) / 10]++;
+    }
+    createPieChart(mp,"Avarage Interarrival Time (ALL)");
+}
+
+
+
 void ChartWindow::on_svcDBarBtn_clicked()
 {
 
@@ -163,6 +187,28 @@ void ChartWindow::on_idleBarBtn_clicked()
         mp[v.second.idleTime]++;
     }
     createBarChart(mp,"Idle Portion Inside");
+}
+
+
+void ChartWindow::on_svcAllBarBtn_clicked()
+{
+    map <float,int> mp;
+    for (auto v : runList)
+    {
+        mp[truncf(v.second.avgSvcAll * 10) / 10]++;
+    }
+    createBarChart(mp,"Avarage Service Time (ALL)");
+}
+
+
+void ChartWindow::on_interBarBtn_clicked()
+{
+    map <float,int> mp;
+    for (auto v : runList)
+    {
+        mp[truncf(v.second.avgInterArrival * 10) / 10]++;
+    }
+    createBarChart(mp,"Avarage Interarrival (ALL)");
 }
 
 

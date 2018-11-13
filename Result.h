@@ -12,11 +12,13 @@ public:
     int maxQueueLength;
     float probInside;
     int idleTime;
+    float avgSvcAll;
+    float avgInterArrival;
     void clear();
     Result operator+(Result);
     Result operator/(int);
     Result();
-    Result(float, float, float,float ,int, float, int);
+    Result(float, float, float,float ,int, float, int,float,float);
     float operator[] (int i);
     ~Result();
 };

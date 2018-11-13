@@ -22,19 +22,69 @@
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Avg Service Time Drive-in</string>
+           <string>Avg Service Time (ALL)</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="svcDBarBtn">
+         <widget class="QPushButton" name="svcAllBarBtn">
           <property name="text">
            <string>Histogram</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="svcDPieBtn">
+         <widget class="QPushButton" name="svcAllPieBtn">
+          <property name="text">
+           <string>Pie Chart</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Avg Interarrival time (ALL)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="interBarBtn">
+          <property name="text">
+           <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="interPieBtn">
+          <property name="text">
+           <string>Pie Chart</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Avg Service Time Drive-in</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcDBarBtn_2">
+          <property name="text">
+           <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcDPieBtn_2">
           <property name="text">
            <string>Pie Chart</string>
           </property>

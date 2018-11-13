@@ -267,10 +267,14 @@ Result System::calculateSystem() {
     int numDrivein =(int) driveInQueue.size();
     int numInside = (int)insideQueue.size();
     float probInside =(float) numInside*((float) 100/tasks.size());
+    float svcAll = 0;
+    float interArrivalAll = 0;
     for (auto t : driveInQueue)
     {
         driveinSvc += t.serviceTime;
         driveinWaiting += t.waitingTime;
+        svcAll += t.serviceTime;
+        interArrivalAll += t.interarrivalTime;
     }
     for (auto t : insideQueue)
     {
@@ -295,7 +299,7 @@ Result System::calculateSystem() {
             }
         }
     }
-    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside, idleInside==0?tasks.back().timeServiceEnds :idleInside);
+    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside, idleInside==0?tasks.back().timeServiceEnds :idleInside,svcAll/tasks.size(),interArrivalAll/tasks.size());
 
     return result;
 }

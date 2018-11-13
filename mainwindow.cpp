@@ -18,7 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    srand(time(NULL));
+   // srand(time(NULL));
+    srand(1);
     if(!ui->customRunsCheckbox->isChecked())
     {
         ui->customRunsText->setEnabled(false);
@@ -79,12 +80,12 @@ void MainWindow::on_beginSimulationBtn_clicked()
 
         ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
 
- for(int i=0;i<7;i++)
+ for(int i=0;i<9;i++)
  {
-     ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=5 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
+     ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=7 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
  }
-  ui->resultsTable->setItem(7,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
-  ui->resultsTable->setItem(8,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
+  ui->resultsTable->setItem(9,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
+  ui->resultsTable->setItem(10,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
  ui->resultsTable->horizontalHeader()->setVisible(false);
 
 

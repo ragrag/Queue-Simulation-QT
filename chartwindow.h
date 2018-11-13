@@ -65,6 +65,14 @@ private slots:
 
     void on_idleBarBtn_clicked();
 
+    void on_interBarBtn_clicked();
+
+    void on_interPieBtn_clicked();
+
+    void on_svcAllBarBtn_clicked();
+
+    void on_svcAllPieBtn_clicked();
+
 private:
     Ui::ChartWindow *ui;
     vector < pair<System,Result> > runList;
