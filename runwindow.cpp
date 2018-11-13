@@ -76,11 +76,11 @@ void runWindow::on_svcChartBtn_clicked()
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->setTitle("Simple line chart example");
+    chart->setTitle("Service Times");
 
     QChartView *chartView = new QChartView(chart);
     chartView->chart()->setAxisX(axisX, series);
-
+    chartView->chart()->removeAxis(axisX);
     chartView->setRenderHint(QPainter::Antialiasing);
 
     QWidget * chartWindow = new QWidget(0);
@@ -111,11 +111,11 @@ void runWindow::on_arrivalChartBtn_clicked()
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->setTitle("Simple line chart example");
+    chart->setTitle("Interarrival Times");
 
     QChartView *chartView = new QChartView(chart);
     chartView->chart()->setAxisX(axisX, series);
-
+    chartView->chart()->removeAxis(axisX);
     chartView->setRenderHint(QPainter::Antialiasing);
 
     QWidget * chartWindow = new QWidget(0);
