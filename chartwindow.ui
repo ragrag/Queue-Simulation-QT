@@ -29,7 +29,7 @@
         <item>
          <widget class="QPushButton" name="svcDBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -61,7 +61,7 @@
         <item>
          <widget class="QPushButton" name="svcIBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -93,7 +93,7 @@
         <item>
          <widget class="QPushButton" name="waitDBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -125,7 +125,7 @@
         <item>
          <widget class="QPushButton" name="waitIBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -157,7 +157,7 @@
         <item>
          <widget class="QPushButton" name="qlBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -189,7 +189,7 @@
         <item>
          <widget class="QPushButton" name="probBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>
@@ -221,7 +221,7 @@
         <item>
          <widget class="QPushButton" name="idleBarBtn">
           <property name="text">
-           <string>PushButton</string>
+           <string>Histogram</string>
           </property>
          </widget>
         </item>

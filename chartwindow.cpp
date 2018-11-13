@@ -97,40 +97,40 @@ void ChartWindow::on_idlePieBtn_clicked()
 void ChartWindow::on_svcDBarBtn_clicked()
 {
 
-    map <int,int> mp;
+    map <float,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.avgSvcDrivein]++;
+        mp[truncf(v.second.avgSvcInside * 10) / 10]++;
     }
     createBarChart(mp,"Avarage Service Drive-in");
 }
 
 void ChartWindow::on_svcIBarBtn_clicked()
 {
-    map <int,int> mp;
+    map <float,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.avgSvcInside]++;
+        mp[truncf(v.second.avgSvcInside* 10) / 10]++;
     }
     createBarChart(mp,"Avarage Service Inside");
 }
 
 void ChartWindow::on_waitDBarBtn_clicked()
 {
-    map <int,int> mp;
+    map <float,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.avgWaitingDrivein]++;
+        mp[truncf(v.second.avgWaitingDrivein* 10) / 10]++;
     }
     createBarChart(mp,"Avarage Waiting Drive-in");
 }
 
 void ChartWindow::on_waitIBarBtn_clicked()
 {
-    map <int,int> mp;
+    map <float,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.avgWaitingInside]++;
+        mp[truncf(v.second.avgWaitingInside* 10) / 10]++;
     }
     createBarChart(mp,"Avarage Waiting Inside");
 }
@@ -226,8 +226,9 @@ template<typename T> void ChartWindow::createBarChart(T mp,string title)
 
 for (auto v:mp)
 {
-*set0<<(int)v.second;
- categories<<QString::number(v.first);
+cout<<(float)v.first<<endl;
+    *set0<<(float)v.second;
+ categories<<QString::number((float)v.first);
 }
 QBarSeries *series = new QBarSeries();
    series->append(set0);
