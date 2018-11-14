@@ -14,9 +14,11 @@
 #include <QtCharts/QBarSet>
 #include <QtCharts/QBarSeries>
 #include <QtCharts/QBarCategoryAxis>
-
+#include "histogramplot.h"
 #include <string>
-
+#include <qtoolbar.h>
+#include <qtoolbutton.h>
+#include <qcombobox.h>
 QT_CHARTS_USE_NAMESPACE
 using namespace std;
 namespace Ui {
@@ -33,10 +35,11 @@ public:
     ~ChartWindow();
     template<typename T>  void createPieChart( T mp,string  );
     template<typename T> void createBarChart(T mp,string title);
+    template<typename T> void createHistogram(T mp,string title);
 
 private slots:
 
-    void on_svcDPieBtn_clicked();
+    void on_svcDPieBtn_2_clicked();
 
     void on_svcIPieBtn_clicked();
 
@@ -51,7 +54,7 @@ private slots:
     void on_idlePieBtn_clicked();
 
 
-    void on_svcDBarBtn_clicked();
+
 
     void on_svcIBarBtn_clicked();
 
@@ -73,9 +76,30 @@ private slots:
 
     void on_svcAllPieBtn_clicked();
 
+    void on_svcDBarBtn_2_clicked();
+
+    void on_avgSvcAllHist_Btn_clicked();
+
+    void on_avgInterHist_Btn_clicked();
+
+    void on_avgSvcDHist_btn_clicked();
+
+    void on_avgSvcIHist_Btn_clicked();
+
+    void on_avgWaitDHist_Btn_clicked();
+
+    void on_avgWaitI_Btn_clicked();
+
+    void on_maxQHist_Btn_clicked();
+
+    void on_probInHist_Btn_clicked();
+
+    void on_idleHist_Btn_clicked();
+
 private:
     Ui::ChartWindow *ui;
     vector < pair<System,Result> > runList;
+     HistogramPlot *d_plot;
 };
 
 #endif // CHARTWINDOW_H

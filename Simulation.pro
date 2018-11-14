@@ -4,7 +4,10 @@
 #
 #-------------------------------------------------
 
-include (F:\qtmods\nightcharts-master\nightcharts.pri)
+#include (F:\qtmods\nightcharts-master\nightcharts.pri)
+include (C:\Qwt-6.1.3\features\qwt.prf)
+#include (C:\qwt-6.1.3\qwtbuild.pri)
+
 QT       += core gui charts datavisualization
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -21,7 +24,7 @@ SOURCES += main.cpp\
     runwindow.cpp \
     probabilitytable.cpp \
     chartwindow.cpp \
-    histogram.cpp
+    histogramplot.cpp
 
 HEADERS  += mainwindow.h \
     System.h \
@@ -30,10 +33,9 @@ HEADERS  += mainwindow.h \
     runwindow.h \
     probabilitytable.h \
     chartwindow.h \
-    histogram.h
+    histogramplot.h
 
 FORMS    += mainwindow.ui \
     runwindow.ui \
     probabilitytable.ui \
-    chartwindow.ui \
-    histogram.ui
+    chartwindow.ui

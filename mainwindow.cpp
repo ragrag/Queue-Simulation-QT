@@ -9,16 +9,43 @@
 #include <QStringList>
 #include <QTableWidgetItem>
 #include "probabilitytable.h"
+#include <QWidget>
+
+#include<qwt_plot.h>
+#include<qwt_plot_curve.h>
+#include<qwt_plot_histogram.h>
+#include<qwt_series_data.h>
+#include<iostream>
+#include <QDialog>
 
 
+
+#include <QPushButton>
+#include <QWidget>
+#include <QFont>
+#include <QIcon>
+#include <QLocale>
+#include <QTranslator>
+#include <QLibraryInfo>
+#include <qwt_plot.h>
+#include <qwt_plot_histogram.h>
+#include <qwt_series_data.h>
+#include <qwt_scale_map.h>
+//#include <QtWidgets>
+
+#include "qwt_plot_grid.h"
+#include "qwt_interval.h"
+#include "qwt_series_data.h"
+#include "qwt_series_store.h"
 
 vector < pair<System,Result> > runList;
-
+using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
    // srand(time(NULL));
     srand(1);
@@ -89,7 +116,7 @@ void MainWindow::on_beginSimulationBtn_clicked()
 
  for(int i=0;i<9;i++)
  {
-     ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=7 ?  QString::number(finalResult[i]) : QString::number(finalResult[i]) +"%" ));
+     ui->resultsTable->setItem(i,0,new QTableWidgetItem(   QString::number(finalResult[i])  ));
  }
   ui->resultsTable->setItem(9,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
   ui->resultsTable->setItem(10,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));

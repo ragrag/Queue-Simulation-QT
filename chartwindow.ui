@@ -27,9 +27,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="svcAllBarBtn">
+         <widget class="QPushButton" name="avgSvcAllHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcAllBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -52,9 +59,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="interBarBtn">
+         <widget class="QPushButton" name="avgInterHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="interBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -77,9 +91,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="svcDBarBtn_2">
+         <widget class="QPushButton" name="avgSvcDHist_btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcDBarBtn_2">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -102,9 +123,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="svcIBarBtn">
+         <widget class="QPushButton" name="avgSvcIHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcIBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -127,9 +155,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="waitDBarBtn">
+         <widget class="QPushButton" name="avgWaitDHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="waitDBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -152,9 +187,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="waitIBarBtn">
+         <widget class="QPushButton" name="avgWaitI_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="waitIBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -177,9 +219,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="qlBarBtn">
+         <widget class="QPushButton" name="maxQHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="qlBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -202,9 +251,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="probBarBtn">
+         <widget class="QPushButton" name="probInHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="probBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>
@@ -227,9 +283,16 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="idleBarBtn">
+         <widget class="QPushButton" name="idleHist_Btn">
           <property name="text">
            <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="idleBarBtn">
+          <property name="text">
+           <string>Frequency Bar Chart</string>
           </property>
          </widget>
         </item>

@@ -44,7 +44,7 @@ runWindow::runWindow(QWidget *parent, System sys, Result res) :
       ui->resultsTable->setVerticalHeaderLabels(lstRes);
       for(int i=0;i<9;i++)
       {
-          ui->resultsTable->setItem(i,0,new QTableWidgetItem(  i!=7 ?  QString::number(system.second[i]) : QString::number(system.second[i]) +"%" ));
+          ui->resultsTable->setItem(i,0,new QTableWidgetItem( QString::number(system.second[i]) ));
       }
       ui->resultsTable->horizontalHeader()->setVisible(false);
 
