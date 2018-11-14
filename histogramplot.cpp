@@ -61,7 +61,7 @@ void Histogram::setValues( uint numValues, const double *values,map <float,int> 
     setData( new QwtIntervalSeriesData( samples ) );
 }
 
- template<typename T> HistogramPlot::HistogramPlot( QWidget *parent ,  string xbottom,T mp):
+ HistogramPlot::HistogramPlot( QWidget *parent ,  string xbottom,map<float,int> mp):
     QwtPlot( parent )
 {
 
@@ -118,47 +118,6 @@ void HistogramPlot::populate()
         mp.size(), values ,mp);
     histogramPlost->attach( this );
 
-}
-
-void HistogramPlot::exportPlot()
-{
-    QwtPlotRenderer renderer;
-    renderer.exportTo( this, "histogram.pdf" );
-}
-
-void HistogramPlot::setMode( int mode )
-{
-
-
-
-    QwtPlotItemList items = itemList( QwtPlotItem::Rtti_PlotHistogram );
-
-    for ( int i = 0; i < items.size(); i++ )
-    {
-        QwtPlotHistogram *histogram = static_cast<QwtPlotHistogram *>( items[i] );
-        if ( mode < 3 )
-        {
-            histogram->setStyle( static_cast<QwtPlotHistogram::HistogramStyle>( mode ) );
-            histogram->setSymbol( NULL );
-
-            QPen pen( Qt::black, 0 );
-            if ( mode == QwtPlotHistogram::Lines )
-                pen.setBrush( histogram->brush() );
-
-            histogram->setPen( pen );
-        }
-        else
-        {
-            histogram->setStyle( QwtPlotHistogram::Columns );
-
-            QwtColumnSymbol *symbol = new QwtColumnSymbol( QwtColumnSymbol::Box );
-            symbol->setFrameStyle( QwtColumnSymbol::Raised );
-            symbol->setLineWidth( 2 );
-            symbol->setPalette( QPalette( histogram->brush().color() ) );
-
-            histogram->setSymbol( symbol );
-        }
-    }
 }
 
 void HistogramPlot::showItem( const QVariant &itemInfo, bool on )

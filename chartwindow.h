@@ -35,7 +35,7 @@ public:
     ~ChartWindow();
     template<typename T>  void createPieChart( T mp,string  );
     template<typename T> void createBarChart(T mp,string title);
-    template<typename T> void createHistogram(T mp,string title);
+     void createHistogram(map<float,int> mp,string title);
 
 private slots:
 

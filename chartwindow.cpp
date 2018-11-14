@@ -286,7 +286,7 @@ void ChartWindow::on_avgWaitI_Btn_clicked()
 
 void ChartWindow::on_maxQHist_Btn_clicked()
 {
-    map <int,int> mp;
+    map <float,int> mp;
       for (auto v : runList)
       {
           mp[v.second.maxQueueLength]++;
@@ -306,7 +306,7 @@ void ChartWindow::on_probInHist_Btn_clicked()
 
 void ChartWindow::on_idleHist_Btn_clicked()
 {
-    map <int,int> mp;
+    map <float,int> mp;
         for (auto v : runList)
         {
             mp[v.second.idleTime]++;
@@ -316,35 +316,25 @@ void ChartWindow::on_idleHist_Btn_clicked()
 
 
 
-template<typename T> void ChartWindow::createHistogram(T mp,string title)
+void ChartWindow::createHistogram(map<float,int> mp,string title)
 {
 
 
     d_plot = new HistogramPlot( this,title ,mp );
-    setCentralWidget( d_plot );
 
-    QToolBar *toolBar = new QToolBar( this );
+    QWidget * chartWindow = new QWidget(0);
+    QVBoxLayout *layout = new QVBoxLayout(chartWindow);
+    layout->addWidget(d_plot);
+    setLayout(layout);
+    layout->activate();
 
-    QComboBox *typeBox = new QComboBox( toolBar );
-    typeBox->addItem( "Outline" );
-    typeBox->addItem( "Columns" );
-    typeBox->addItem( "Lines" );
-    typeBox->addItem( "Column Symbol" );
-    typeBox->setCurrentIndex( typeBox->count() - 1 );
-    typeBox->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
+    chartWindow->resize(800,400);
+    chartWindow->show();
 
-    QToolButton *btnExport = new QToolButton( toolBar );
-    btnExport->setText( "Export" );
-    btnExport->setToolButtonStyle( Qt::ToolButtonTextUnderIcon );
-    connect( btnExport, SIGNAL( clicked() ), d_plot, SLOT( exportPlot() ) );
 
-    toolBar->addWidget( typeBox );
-    toolBar->addWidget( btnExport );
-    addToolBar( toolBar );
 
-    d_plot->setMode( typeBox->currentIndex() );
-    connect( typeBox, SIGNAL( currentIndexChanged( int ) ),
-             d_plot, SLOT( setMode( int ) ) );
+
+
 }
    template<typename T> void ChartWindow::createPieChart(T mp,string title)
 {

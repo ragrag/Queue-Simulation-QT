@@ -11,11 +11,10 @@ class HistogramPlot: public QwtPlot
     Q_OBJECT
 
 public:
-   template<typename T>  HistogramPlot( QWidget * = NULL,string xbottom="",T mp = map<float,int>());
+     HistogramPlot( QWidget * = NULL,string xbottom="",map<float,int> mp= map<float,int>());
 
 public Q_SLOTS:
-    void setMode( int );
-    void exportPlot();
+
 
 private:
     void populate();
