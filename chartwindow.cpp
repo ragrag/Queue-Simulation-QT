@@ -2,6 +2,9 @@
 #include "ui_chartwindow.h"
 
 
+
+//This window is the GUI for the charts
+
 ChartWindow::ChartWindow(QWidget *parent,vector <pair < System,Result> > runList) :
     QMainWindow(parent),
     ui(new Ui::ChartWindow)
@@ -410,7 +413,7 @@ void ChartWindow::on_idleLineBtn_clicked()
 }
 
 
-void ChartWindow::createHistogram(map<float,int> mp,string title)
+void ChartWindow::createHistogram(map<float,int> mp,string title) //Creating Histogram
 {
 
 
@@ -427,7 +430,7 @@ void ChartWindow::createHistogram(map<float,int> mp,string title)
 
 
 }
-   template<typename T> void ChartWindow::createPieChart(T mp,string title)
+   template<typename T> void ChartWindow::createPieChart(T mp,string title) //Creating Pie Chart
 {
 
     QPieSeries *series = new QPieSeries();
@@ -476,7 +479,7 @@ void ChartWindow::createHistogram(map<float,int> mp,string title)
 
 
 
-template<typename T> void ChartWindow::createLineChart(T mp,string title)
+template<typename T> void ChartWindow::createLineChart(T mp,string title) //Creating Line Chart
 {
     QLineSeries *series = new QLineSeries();
     for(int i=0;i< mp.size();i++ )
@@ -512,7 +515,7 @@ template<typename T> void ChartWindow::createLineChart(T mp,string title)
 }
 
 
-template<typename T> void ChartWindow::createBarChart(T mp,string title)
+template<typename T> void ChartWindow::createBarChart(T mp,string title) //Creating Bar Chart
 {
 
 

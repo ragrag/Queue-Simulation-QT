@@ -1,18 +1,14 @@
 #include "Result.h"
 
+
+//Members
 Result::Result()
 {
-     avgSvcDrivein=0;
-     avgSvcInside=0;
-     avgWaitingDrivein = 0;
-     avgWaitingInside = 0;
-     maxQueueLength=0;
-     probInside=0;
-     idleTime=0;
-     avgSvcAll=0;
-     avgInterArrival=0;
+    clear();
 }
 
+
+//Constructor
 Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,float avgWaitingInside, int maxQueueLength, float probInside,int idleTime,float avgSvcAll,float avgInterArrival)
 {
     this-> avgSvcDrivein= avgDriveinSvc;
@@ -26,6 +22,8 @@ Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,fl
     this->avgInterArrival = avgInterArrival;
 }
 
+
+//Get by order
 float Result::operator[] (int i)
 {
   switch (i) {
@@ -43,6 +41,11 @@ float Result::operator[] (int i)
   }
 }
 
+
+
+
+
+//Overloaded + operator for adding results together
 Result Result::operator+(Result other)
 {
 
@@ -52,12 +55,15 @@ Result Result::operator+(Result other)
 
 }
 
+//Overloaded / operator for deviding a result by a number
 Result Result::operator/(int n)
 {
     return Result(avgSvcDrivein/n , avgSvcInside/n, avgWaitingDrivein / n, avgWaitingInside / n, maxQueueLength/n, probInside/n, idleTime/n,avgSvcAll/n,avgInterArrival/n);
 }
 
 
+
+//Set all members to 0
 void Result::clear()
 {
     avgSvcDrivein = 0;

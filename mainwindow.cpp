@@ -38,7 +38,11 @@
 #include "qwt_series_data.h"
 #include "qwt_series_store.h"
 
-vector < pair<System,Result> > runList;
+
+
+//The Main Screen of the program
+
+vector < pair<System,Result> > runList; //A vector of pairs holding <System,Result> pairs
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
    // srand(time(NULL));
-    srand(1);
+    srand(1); //Random with a seed of 1
     if(!ui->customRunsCheckbox->isChecked())
     {
         ui->customRunsText->setEnabled(false);
@@ -66,15 +70,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_beginSimulationBtn_clicked()
+void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
 {
 
 
-        vector <int>  arrivalTime = { 0,1,2,3,4,5 };
-        vector <double> probabilityArrival = {0.09, 0.17 , 0.27, 0.20, 0.15, 0.12};
+        vector <int>  arrivalTime = { 0,1,2,3,4,5 }; //Interrrivals time
+        vector <double> probabilityArrival = {0.09, 0.17 , 0.27, 0.20, 0.15, 0.12}; //Interarrival times probabilities
 
-        vector <int> serviceTime = { 1,2,3,4};
-        vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 };
+        vector <int> serviceTime = { 1,2,3,4};   //Service Times
+        vector <double> probabilityService = { 0.20, 0.40 , 0.28, 0.12 }; //Service Times Probabilities
         int jobs;
         int runs;
         if(ui->customRunsCheckbox->isChecked())
@@ -88,7 +92,7 @@ void MainWindow::on_beginSimulationBtn_clicked()
             runs = 30;
         }
 
-        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);
+        System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);//System Initilization
         cout << endl;
 
 
@@ -96,7 +100,7 @@ void MainWindow::on_beginSimulationBtn_clicked()
         Result finalResultTwoCars= Result();
         runList.clear();
         ui->runsList->clear();
-        for (int i = 0;i < runs;i++)
+        for (int i = 0;i < runs;i++)                //Running and accumilating results
         {
             system.buildSystem(jobs);
             Result run = system.calculateSystem();
@@ -108,10 +112,13 @@ void MainWindow::on_beginSimulationBtn_clicked()
              run = system.calculateSystem();
              finalResultTwoCars = finalResultTwoCars + run;
         }
-        finalResult = finalResult / runs;
+        finalResult = finalResult / runs;               //Getting average
         finalResultTwoCars = finalResultTwoCars / runs;
 
 
+
+
+        //Displaying
         ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
 
  for(int i=0;i<9;i++)
