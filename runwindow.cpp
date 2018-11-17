@@ -1,6 +1,10 @@
 #include "runwindow.h"
 #include "ui_runwindow.h"
 #include <algorithm>
+
+
+
+//A window that displays details about invididual runs
 runWindow::runWindow(QWidget *parent, System sys, Result res) :
     QMainWindow(parent),
     ui(new Ui::runWindow)

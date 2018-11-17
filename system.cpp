@@ -1,6 +1,10 @@
 #include "System.h"
 #include "Task.h"
 
+
+//The main container class for the program
+
+//Contructor that takes parameters and calculates probability tables
 System::System(vector <int>  arrivalTime, vector <double> probabilityArrival, vector <int> serviceTime, vector <double> probabilityService)
 {
     this->arrivalTime = arrivalTime;
@@ -15,6 +19,8 @@ System::System()
 {
 
 }
+
+//Creates Cumulative probability tables
 void System::buildTables() {
     cumulativeArrival.clear();
     cumulativeService.clear();
@@ -26,6 +32,8 @@ void System::buildTables() {
             cumulativeService.push_back(i == 0 ? probabilityService[0] * 100 : cumulativeService[i - 1] + probabilityService[i] * 100);
     }
 }
+
+//Returns Cumulative Probability tables
 void System::getTables()
 {
 
