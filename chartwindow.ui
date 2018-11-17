@@ -41,6 +41,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="svcAllLine_Btn">
+          <property name="text">
+           <string>Line Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="svcAllPieBtn">
           <property name="text">
            <string>Pie Chart</string>
@@ -69,6 +76,13 @@
          <widget class="QPushButton" name="interBarBtn">
           <property name="text">
            <string>Frequency Bar Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="interLine_Btn">
+          <property name="text">
+           <string>Line Chart</string>
           </property>
          </widget>
         </item>
@@ -105,6 +119,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="svcDLineBtn_2">
+          <property name="text">
+           <string>Line Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="svcDPieBtn_2">
           <property name="text">
            <string>Pie Chart</string>
@@ -133,6 +154,13 @@
          <widget class="QPushButton" name="svcIBarBtn">
           <property name="text">
            <string>Frequency Bar Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="svcILineBtn">
+          <property name="text">
+           <string>Line Chart</string>
           </property>
          </widget>
         </item>
@@ -169,6 +197,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="waitDLineBtn">
+          <property name="text">
+           <string>Line Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="waitDPieBtn">
           <property name="text">
            <string>Pie Chart</string>
@@ -197,6 +232,13 @@
          <widget class="QPushButton" name="waitIBarBtn">
           <property name="text">
            <string>Frequency Bar Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="waitILineBtn">
+          <property name="text">
+           <string>Line Chart</string>
           </property>
          </widget>
         </item>
@@ -233,6 +275,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="qlLineBtn">
+          <property name="text">
+           <string>Line Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="qlPieBtn">
           <property name="text">
            <string>Pie Chart</string>
@@ -265,6 +314,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="probLineBtn">
+          <property name="text">
+           <string>Line Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="probPieBtn">
           <property name="text">
            <string>Pie Chart</string>
@@ -293,6 +349,13 @@
          <widget class="QPushButton" name="idleBarBtn">
           <property name="text">
            <string>Frequency Bar Chart</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="idleLineBtn">
+          <property name="text">
+           <string>Line Chart</string>
           </property>
          </widget>
         </item>

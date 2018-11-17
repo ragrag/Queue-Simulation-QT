@@ -14,6 +14,9 @@
 #include <QtCharts/QBarSet>
 #include <QtCharts/QBarSeries>
 #include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+
 #include "histogramplot.h"
 #include <string>
 #include <qtoolbar.h>
@@ -35,7 +38,8 @@ public:
     ~ChartWindow();
     template<typename T>  void createPieChart( T mp,string  );
     template<typename T> void createBarChart(T mp,string title);
-     void createHistogram(map<float,int> mp,string title);
+    template<typename T> void ChartWindow::createLineChart(T mp,string title);
+    void createHistogram(map<float,int> mp,string title);
 
 private slots:
 
@@ -95,6 +99,24 @@ private slots:
     void on_probInHist_Btn_clicked();
 
     void on_idleHist_Btn_clicked();
+
+    void on_svcAllLine_Btn_clicked();
+
+    void on_interLine_Btn_clicked();
+
+    void on_svcDLineBtn_2_clicked();
+
+    void on_svcILineBtn_clicked();
+
+    void on_waitDLineBtn_clicked();
+
+    void on_waitILineBtn_clicked();
+
+    void on_qlLineBtn_clicked();
+
+    void on_probLineBtn_clicked();
+
+    void on_idleLineBtn_clicked();
 
 private:
     Ui::ChartWindow *ui;

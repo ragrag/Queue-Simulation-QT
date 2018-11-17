@@ -94,6 +94,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Theoritical Average : 2.5</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QTableWidget" name="serviceTable">
        <property name="rowCount">
         <number>4</number>
@@ -141,6 +148,13 @@
          <string>Range</string>
         </property>
        </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Theoritical Average :2.5</string>
+       </property>
       </widget>
      </item>
     </layout>

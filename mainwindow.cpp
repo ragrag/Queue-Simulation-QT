@@ -85,7 +85,7 @@ void MainWindow::on_beginSimulationBtn_clicked()
         }
         else {
             jobs = 100;
-            runs = 100;
+            runs = 30;
         }
 
         System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);

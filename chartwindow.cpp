@@ -79,7 +79,7 @@ void ChartWindow::on_probPieBtn_clicked()
     {
         mp[truncf(v.second.probInside*100)/100]++;
     }
-    createPieChart(mp,"Probability To Go Inside");
+    createPieChart(mp,"Probability to Go Inside");
 }
 
 void ChartWindow::on_idlePieBtn_clicked()
@@ -202,7 +202,7 @@ void ChartWindow::on_probBarBtn_clicked()
     {
         mp[truncf(v.second.probInside*100)/100]++;
     }
-    createBarChart(mp,"Probability To Go Inside");
+    createBarChart(mp,"Probability to Go Inside");
 }
 
 void ChartWindow::on_idleBarBtn_clicked()
@@ -301,7 +301,7 @@ void ChartWindow::on_probInHist_Btn_clicked()
         {
             mp[truncf(v.second.probInside*100)/100]++;
         }
-        createHistogram(mp,"Probability To Go Inside");
+        createHistogram(mp,"Probability to Go Inside");
 }
 
 void ChartWindow::on_idleHist_Btn_clicked()
@@ -314,6 +314,100 @@ void ChartWindow::on_idleHist_Btn_clicked()
         createHistogram(mp,"Idle Portion Inside");
 }
 
+
+
+
+
+
+void ChartWindow::on_svcAllLine_Btn_clicked()
+{
+        vector <float> mp;
+        for (auto v : runList)
+        {
+           mp.push_back(v.second.avgSvcAll);
+        }
+        createLineChart(mp,"Average Service Time (ALL)");
+}
+
+void ChartWindow::on_interLine_Btn_clicked()
+{
+        vector <float> mp;
+        for (auto v : runList)
+        {
+           mp.push_back(v.second.avgInterArrival);
+        }
+        createLineChart(mp,"Average Interarrival Time");
+}
+
+void ChartWindow::on_svcDLineBtn_2_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.avgSvcDrivein);
+    }
+    createLineChart(mp,"Average Service Time Drive-in");
+}
+
+void ChartWindow::on_svcILineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.avgSvcInside);
+    }
+    createLineChart(mp,"Average Service Time Inside");
+}
+
+void ChartWindow::on_waitDLineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.avgWaitingDrivein);
+    }
+    createLineChart(mp,"Average Waiting Time Drive-in");
+}
+
+void ChartWindow::on_waitILineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.avgWaitingInside);
+    }
+    createLineChart(mp,"Average Waiting Time Inside");
+}
+
+void ChartWindow::on_qlLineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.maxQueueLength);
+    }
+    createLineChart(mp,"Maximum Queue Length Inside");
+}
+
+void ChartWindow::on_probLineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.probInside);
+    }
+    createLineChart(mp,"Probability to Go Inside");
+}
+
+void ChartWindow::on_idleLineBtn_clicked()
+{
+    vector <float> mp;
+    for (auto v : runList)
+    {
+       mp.push_back(v.second.idleTime);
+    }
+    createLineChart(mp,"Idle Portion Inside");
+}
 
 
 void ChartWindow::createHistogram(map<float,int> mp,string title)
@@ -330,9 +424,6 @@ void ChartWindow::createHistogram(map<float,int> mp,string title)
 
     chartWindow->resize(800,400);
     chartWindow->show();
-
-
-
 
 
 }
@@ -360,8 +451,8 @@ void ChartWindow::createHistogram(map<float,int> mp,string title)
     QPieSlice *slice = series->slices().at(idx);
     slice->setExploded();
     slice->setLabelVisible();
-    slice->setPen(QPen(Qt::darkGreen, 2));
-    slice->setBrush(Qt::green);
+    slice->setPen(QPen(Qt::darkRed, 2));
+    slice->setBrush(Qt::darkRed);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
@@ -383,6 +474,42 @@ void ChartWindow::createHistogram(map<float,int> mp,string title)
 
 }
 
+
+
+template<typename T> void ChartWindow::createLineChart(T mp,string title)
+{
+    QLineSeries *series = new QLineSeries();
+    for(int i=0;i< mp.size();i++ )
+    {
+        series->append(i+1,mp[i]);
+    }
+
+    QValueAxis *axisX = new QValueAxis;
+    axisX->setRange(1, mp.size());
+    axisX->setTickCount(1);
+    //axisX->setLabelFormat("%.2f");
+
+    QChart *chart = new QChart();
+    chart->legend()->hide();
+    chart->addSeries(series);
+    chart->createDefaultAxes();
+    chart->setTitle(QString::fromStdString(title));
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->chart()->setAxisX(axisX, series);
+    chartView->chart()->removeAxis(axisX);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    QWidget * chartWindow = new QWidget(0);
+    QVBoxLayout *layout = new QVBoxLayout(chartWindow);
+    layout->addWidget(chartView);
+    setLayout(layout);
+    layout->activate();
+
+    chartWindow->resize(1000,400);
+    chartWindow->show();
+
+}
 
 
 template<typename T> void ChartWindow::createBarChart(T mp,string title)
@@ -429,4 +556,3 @@ QBarSeries *series = new QBarSeries();
 
 
 }
-

@@ -35,46 +35,55 @@ public:
     QLabel *label;
     QPushButton *avgSvcAllHist_Btn;
     QPushButton *svcAllBarBtn;
+    QPushButton *svcAllLine_Btn;
     QPushButton *svcAllPieBtn;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_9;
     QPushButton *avgInterHist_Btn;
     QPushButton *interBarBtn;
+    QPushButton *interLine_Btn;
     QPushButton *interPieBtn;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_8;
     QPushButton *avgSvcDHist_btn;
     QPushButton *svcDBarBtn_2;
+    QPushButton *svcDLineBtn_2;
     QPushButton *svcDPieBtn_2;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_2;
     QPushButton *avgSvcIHist_Btn;
     QPushButton *svcIBarBtn;
+    QPushButton *svcILineBtn;
     QPushButton *svcIPieBtn;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_3;
     QPushButton *avgWaitDHist_Btn;
     QPushButton *waitDBarBtn;
+    QPushButton *waitDLineBtn;
     QPushButton *waitDPieBtn;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_4;
     QPushButton *avgWaitI_Btn;
     QPushButton *waitIBarBtn;
+    QPushButton *waitILineBtn;
     QPushButton *waitIPieBtn;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label_5;
     QPushButton *maxQHist_Btn;
     QPushButton *qlBarBtn;
+    QPushButton *qlLineBtn;
     QPushButton *qlPieBtn;
     QHBoxLayout *horizontalLayout_12;
     QLabel *label_6;
     QPushButton *probInHist_Btn;
     QPushButton *probBarBtn;
+    QPushButton *probLineBtn;
     QPushButton *probPieBtn;
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_7;
     QPushButton *idleHist_Btn;
     QPushButton *idleBarBtn;
+    QPushButton *idleLineBtn;
     QPushButton *idlePieBtn;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -107,6 +116,11 @@ public:
 
         horizontalLayout->addWidget(svcAllBarBtn);
 
+        svcAllLine_Btn = new QPushButton(centralwidget);
+        svcAllLine_Btn->setObjectName(QStringLiteral("svcAllLine_Btn"));
+
+        horizontalLayout->addWidget(svcAllLine_Btn);
+
         svcAllPieBtn = new QPushButton(centralwidget);
         svcAllPieBtn->setObjectName(QStringLiteral("svcAllPieBtn"));
 
@@ -131,6 +145,11 @@ public:
         interBarBtn->setObjectName(QStringLiteral("interBarBtn"));
 
         horizontalLayout_3->addWidget(interBarBtn);
+
+        interLine_Btn = new QPushButton(centralwidget);
+        interLine_Btn->setObjectName(QStringLiteral("interLine_Btn"));
+
+        horizontalLayout_3->addWidget(interLine_Btn);
 
         interPieBtn = new QPushButton(centralwidget);
         interPieBtn->setObjectName(QStringLiteral("interPieBtn"));
@@ -157,6 +176,11 @@ public:
 
         horizontalLayout_2->addWidget(svcDBarBtn_2);
 
+        svcDLineBtn_2 = new QPushButton(centralwidget);
+        svcDLineBtn_2->setObjectName(QStringLiteral("svcDLineBtn_2"));
+
+        horizontalLayout_2->addWidget(svcDLineBtn_2);
+
         svcDPieBtn_2 = new QPushButton(centralwidget);
         svcDPieBtn_2->setObjectName(QStringLiteral("svcDPieBtn_2"));
 
@@ -181,6 +205,11 @@ public:
         svcIBarBtn->setObjectName(QStringLiteral("svcIBarBtn"));
 
         horizontalLayout_8->addWidget(svcIBarBtn);
+
+        svcILineBtn = new QPushButton(centralwidget);
+        svcILineBtn->setObjectName(QStringLiteral("svcILineBtn"));
+
+        horizontalLayout_8->addWidget(svcILineBtn);
 
         svcIPieBtn = new QPushButton(centralwidget);
         svcIPieBtn->setObjectName(QStringLiteral("svcIPieBtn"));
@@ -207,6 +236,11 @@ public:
 
         horizontalLayout_9->addWidget(waitDBarBtn);
 
+        waitDLineBtn = new QPushButton(centralwidget);
+        waitDLineBtn->setObjectName(QStringLiteral("waitDLineBtn"));
+
+        horizontalLayout_9->addWidget(waitDLineBtn);
+
         waitDPieBtn = new QPushButton(centralwidget);
         waitDPieBtn->setObjectName(QStringLiteral("waitDPieBtn"));
 
@@ -231,6 +265,11 @@ public:
         waitIBarBtn->setObjectName(QStringLiteral("waitIBarBtn"));
 
         horizontalLayout_10->addWidget(waitIBarBtn);
+
+        waitILineBtn = new QPushButton(centralwidget);
+        waitILineBtn->setObjectName(QStringLiteral("waitILineBtn"));
+
+        horizontalLayout_10->addWidget(waitILineBtn);
 
         waitIPieBtn = new QPushButton(centralwidget);
         waitIPieBtn->setObjectName(QStringLiteral("waitIPieBtn"));
@@ -257,6 +296,11 @@ public:
 
         horizontalLayout_11->addWidget(qlBarBtn);
 
+        qlLineBtn = new QPushButton(centralwidget);
+        qlLineBtn->setObjectName(QStringLiteral("qlLineBtn"));
+
+        horizontalLayout_11->addWidget(qlLineBtn);
+
         qlPieBtn = new QPushButton(centralwidget);
         qlPieBtn->setObjectName(QStringLiteral("qlPieBtn"));
 
@@ -282,6 +326,11 @@ public:
 
         horizontalLayout_12->addWidget(probBarBtn);
 
+        probLineBtn = new QPushButton(centralwidget);
+        probLineBtn->setObjectName(QStringLiteral("probLineBtn"));
+
+        horizontalLayout_12->addWidget(probLineBtn);
+
         probPieBtn = new QPushButton(centralwidget);
         probPieBtn->setObjectName(QStringLiteral("probPieBtn"));
 
@@ -306,6 +355,11 @@ public:
         idleBarBtn->setObjectName(QStringLiteral("idleBarBtn"));
 
         horizontalLayout_13->addWidget(idleBarBtn);
+
+        idleLineBtn = new QPushButton(centralwidget);
+        idleLineBtn->setObjectName(QStringLiteral("idleLineBtn"));
+
+        horizontalLayout_13->addWidget(idleLineBtn);
 
         idlePieBtn = new QPushButton(centralwidget);
         idlePieBtn->setObjectName(QStringLiteral("idlePieBtn"));
@@ -338,38 +392,47 @@ public:
         label->setText(QApplication::translate("ChartWindow", "Avg Service Time (ALL)", Q_NULLPTR));
         avgSvcAllHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         svcAllBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        svcAllLine_Btn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         svcAllPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_9->setText(QApplication::translate("ChartWindow", "Avg Interarrival time (ALL)", Q_NULLPTR));
         avgInterHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         interBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        interLine_Btn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         interPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_8->setText(QApplication::translate("ChartWindow", "Avg Service Time Drive-in", Q_NULLPTR));
         avgSvcDHist_btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         svcDBarBtn_2->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        svcDLineBtn_2->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         svcDPieBtn_2->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_2->setText(QApplication::translate("ChartWindow", "Avg Service Time Inside", Q_NULLPTR));
         avgSvcIHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         svcIBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        svcILineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         svcIPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_3->setText(QApplication::translate("ChartWindow", "Avg Waiting Time Drive-in", Q_NULLPTR));
         avgWaitDHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         waitDBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        waitDLineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         waitDPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_4->setText(QApplication::translate("ChartWindow", "Avg Waiting Time inside", Q_NULLPTR));
         avgWaitI_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         waitIBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        waitILineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         waitIPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_5->setText(QApplication::translate("ChartWindow", "Max Queue Length inside", Q_NULLPTR));
         maxQHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         qlBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        qlLineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         qlPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_6->setText(QApplication::translate("ChartWindow", "Probability To Go Inside", Q_NULLPTR));
         probInHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         probBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        probLineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         probPieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
         label_7->setText(QApplication::translate("ChartWindow", "Idle Time Inside", Q_NULLPTR));
         idleHist_Btn->setText(QApplication::translate("ChartWindow", "Histogram", Q_NULLPTR));
         idleBarBtn->setText(QApplication::translate("ChartWindow", "Frequency Bar Chart", Q_NULLPTR));
+        idleLineBtn->setText(QApplication::translate("ChartWindow", "Line Chart", Q_NULLPTR));
         idlePieBtn->setText(QApplication::translate("ChartWindow", "Pie Chart", Q_NULLPTR));
     } // retranslateUi
 
