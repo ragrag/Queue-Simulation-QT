@@ -280,6 +280,7 @@ Result System::calculateSystem() {
     {
         insideSvc += t.serviceTime;
         insideWaiting += t.waitingTime;
+        svcAll += t.serviceTime;
         idleInside += t.idleTime;
     }
 

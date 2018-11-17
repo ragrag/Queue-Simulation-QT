@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -28,7 +29,9 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *arrivalTable;
+    QLabel *label;
     QTableWidget *serviceTable;
+    QLabel *label_2;
 
     void setupUi(QMainWindow *ProbabilityTable)
     {
@@ -77,6 +80,11 @@ public:
 
         verticalLayout->addWidget(arrivalTable);
 
+        label = new QLabel(verticalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout->addWidget(label);
+
         serviceTable = new QTableWidget(verticalLayoutWidget);
         if (serviceTable->columnCount() < 4)
             serviceTable->setColumnCount(4);
@@ -103,6 +111,11 @@ public:
         serviceTable->verticalHeader()->setVisible(false);
 
         verticalLayout->addWidget(serviceTable);
+
+        label_2 = new QLabel(verticalLayoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        verticalLayout->addWidget(label_2);
 
         ProbabilityTable->setCentralWidget(centralwidget);
 
@@ -134,6 +147,7 @@ public:
         ___qtablewidgetitem8->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem9 = arrivalTable->verticalHeaderItem(5);
         ___qtablewidgetitem9->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
+        label->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.5", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem10 = serviceTable->horizontalHeaderItem(0);
         ___qtablewidgetitem10->setText(QApplication::translate("ProbabilityTable", "Service Time", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem11 = serviceTable->horizontalHeaderItem(1);
@@ -150,6 +164,7 @@ public:
         ___qtablewidgetitem16->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem17 = serviceTable->verticalHeaderItem(3);
         ___qtablewidgetitem17->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
+        label_2->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.5", Q_NULLPTR));
     } // retranslateUi
 
 };
