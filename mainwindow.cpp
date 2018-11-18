@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-   // srand(time(NULL));
+   //srand(time(NULL));
     srand(1); //Random with a seed of 1
     if(!ui->customRunsCheckbox->isChecked())
     {
@@ -102,13 +102,13 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
         ui->runsList->clear();
         for (int i = 0;i < runs;i++)                //Running and accumilating results
         {
-            system.buildSystem(jobs);
+            system.buildSystem(jobs,false);
             Result run = system.calculateSystem();
             finalResult = finalResult+run ;
             runList.push_back(make_pair(system,run));
              ui->runsList->addItem("Run :"+QString::number(i+1));
 
-             system.buildSystemTwoCars(jobs);
+             system.buildSystem(jobs,true);
              run = system.calculateSystem();
              finalResultTwoCars = finalResultTwoCars + run;
         }

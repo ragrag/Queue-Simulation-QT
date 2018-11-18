@@ -1,7 +1,7 @@
 #include "Result.h"
 
 
-//Members
+//Members clearing
 Result::Result()
 {
     clear();

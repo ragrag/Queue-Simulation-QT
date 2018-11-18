@@ -284,7 +284,7 @@ public:
         ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Avg Waiting Drive-in (Two Cars)", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem10 = resultsTable->verticalHeaderItem(10);
         ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "Avg Waiting Inside (Two Cars)", Q_NULLPTR));
-        probabilityTableBtn->setText(QApplication::translate("MainWindow", "View Probability Tables and Theoritical Averages", Q_NULLPTR));
+        probabilityTableBtn->setText(QApplication::translate("MainWindow", "Probability Tables and Theoretical Averages", Q_NULLPTR));
         chartsBtn->setText(QApplication::translate("MainWindow", "View Charts", Q_NULLPTR));
         runsLabel->setText(QApplication::translate("MainWindow", "Runs", Q_NULLPTR));
         runsBtn->setText(QApplication::translate("MainWindow", "View Selected Run Data", Q_NULLPTR));

@@ -58,24 +58,24 @@ void System::getTables()
 
 }
 
-void System::buildSystem(int samples)
+
+//Populates system queues, twocars is true if the capacity of the drivein Queue is 3 (can have 2 cars waiting in the queue)
+void System::buildSystem(int samples,bool twocars)
 {
     clear();
-        //int randDig[] = { 36,51,83,67,77,89,11,60,55,42};
-         //int randDig2[] = { 15,1,90,72,74,51,6,89,31,29};
 
 
+        //Iterate over the number of jobs
     for (int i = 0;i < samples;i++)
     {
-        //cout << " i :" << i << endl;
-        //int interArrivalTime = getArrivalTime(randDig[i]);
-        //int serviceTime = getServiceTime(randDig2[i]);
-        //cout<<"Customer :"<<i+1<<endl;
+
         int interArrivalTime = getArrivalTime();
-        //cout<<"Val : "<<interArrivalTime<<endl;
+
         int serviceTime = getServiceTime();
-        //cout<<"Val : "<<serviceTime<<endl;
-        int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;
+
+        int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;   //getting arrival time
+
+        //Populate the first job in the drivein queue
         if (i == 0)
         {
             Task firstTask = Task(1, 0, 0, serviceTime, 0, 0, serviceTime, serviceTime, 0);
@@ -83,7 +83,9 @@ void System::buildSystem(int samples)
             driveInQueue.push_back(firstTask);
             continue;
         }
-        else if (i == 1 || (i > 1 && arrival > driveInQueue[driveInQueue.size()- 2].timeServiceEnds))
+
+        //Check if its the second job (or third if twocar drivein queue), or if the condition for the customer to go in the drivein queue is met
+        else if  ( (twocars? (i == 1 || i==2 ): i == 1 ) || ( (twocars? i>2: i > 1) && arrival > driveInQueue[driveInQueue.size()- (twocars? 3:2)].timeServiceEnds))
         {
 
             int serviceBegin;
@@ -103,9 +105,14 @@ void System::buildSystem(int samples)
             tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
             continue;
         }
+
+        //Customer goes in the inside queue
         else
+
         {
 
+
+            //If the inside queue is empty
             if (insideQueue.size() == 0)
             {
 
@@ -113,6 +120,8 @@ void System::buildSystem(int samples)
                 tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, arrival));
                 continue;
             }
+
+            //if it is not empty
             else {
                 int serviceBegin;
                 if (insideQueue.back().timeServiceEnds < arrival)
@@ -135,93 +144,11 @@ void System::buildSystem(int samples)
 
 }
 
-
-void System::buildSystemTwoCars(int samples)
-{
-    clear();
-        //int randDig[] = { 36,51,83,67,77,89,11,60,55,42};
-         //int randDig2[] = { 15,1,90,72,74,51,6,89,31,29};
-
-
-    for (int i = 0;i < samples;i++)
-    {
-        //cout << " i :" << i << endl;
-        //int interArrivalTime = getArrivalTime(randDig[i]);
-        //int serviceTime = getServiceTime(randDig2[i]);
-        //cout<<"Customer :"<<i+1<<endl;
-        int interArrivalTime = getArrivalTime();
-        //cout<<"Val : "<<interArrivalTime<<endl;
-        int serviceTime = getServiceTime();
-        //cout<<"Val : "<<serviceTime<<endl;
-        int arrival = i == 0 ? 0 : tasks[i - 1].arrivalTime + interArrivalTime;
-        if (i == 0)
-        {
-            Task firstTask = Task(1, 0, 0, serviceTime, 0, 0, serviceTime, serviceTime, 0);
-            tasks.push_back(firstTask);
-            driveInQueue.push_back(firstTask);
-            continue;
-        }
-        else if ( (i == 1 || i==2 ) || (i > 2 && arrival > driveInQueue[driveInQueue.size()- 3].timeServiceEnds))
-        {
-
-            int serviceBegin;
-            if (driveInQueue.back().timeServiceEnds < arrival)
-                serviceBegin = arrival;
-            else serviceBegin = driveInQueue.back().timeServiceEnds;
-
-            int waiting;
-            if (driveInQueue.back().timeServiceEnds < arrival)
-                waiting = 0;
-            else waiting = driveInQueue.back().timeServiceEnds - arrival;
-
-            int serviceEnd = serviceBegin + serviceTime;
-            int timeSpent = serviceEnd - arrival;
-            int idle = driveInQueue.back().timeServiceEnds > arrival ? 0 : arrival - driveInQueue.back().timeServiceEnds;
-            driveInQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
-            tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
-            continue;
-        }
-        else
-        {
-
-            if (insideQueue.size() == 0)
-            {
-
-                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime,arrival));
-                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, arrival, 0, arrival + serviceTime, serviceTime, arrival));
-                continue;
-            }
-            else {
-                int serviceBegin;
-                if (insideQueue.back().timeServiceEnds < arrival)
-                    serviceBegin = arrival;
-                else serviceBegin = insideQueue.back().timeServiceEnds;
-
-                int waiting;
-                if (insideQueue.back().timeServiceEnds < arrival)
-                    waiting = 0;
-                else waiting = insideQueue.back().timeServiceEnds - arrival;
-
-                int serviceEnd = serviceBegin + serviceTime;
-                int timeSpent = serviceEnd - arrival;
-                int idle = insideQueue.back().timeServiceEnds > arrival ? 0 : arrival - insideQueue.back().timeServiceEnds;
-                insideQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
-                tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
-            }
-        }
-    }
-
-}
+//getting random interarrival time
 int System::getArrivalTime()
 {
-
-
-
-    //cout << "Arrival rand :" << random << "\n";
-    //int random = at;
-
-    int random = rand() % 100 + 1;
-    //cout<<"Random Arrival : "<<random<<endl;
+    int random = rand() % 100 + 1; //random number generation
+    //Checking ranges and returning appropriate number
     for (int i = 0;i < cumulativeArrival.size();i++)
     {
         if (i == 0)
@@ -236,16 +163,14 @@ int System::getArrivalTime()
     return -1;
 }
 
-
+//getting random service time
 int System::getServiceTime()
 {
 
+    int random = rand() % 100 + 1; //ranodm number generation
 
-    //cout << "Service rand :" << random << "\n";
-    //int random = st;
 
-    int random = rand() % 100 + 1;
-    //cout<<"Random Service : "<<random<<endl;
+    //checking ranges and returning appropriate number
     for (int i = 0;i < cumulativeService.size();i++)
     {
         if (i == 0)
@@ -262,8 +187,12 @@ int System::getServiceTime()
     return -1;
 }
 
+
+//Calculating the results based on populated queues
 Result System::calculateSystem() {
 
+
+    //initializing values to 0
     float driveinSvc = 0;
     float driveinWaiting = 0;
 
@@ -277,6 +206,8 @@ Result System::calculateSystem() {
     float probInside =(float) ((float)numInside*((float) 100/tasks.size()) )/100;
     float svcAll = 0;
     float interArrivalAll = 0;
+
+    //accumilating values
     for (auto t : driveInQueue)
     {
         driveinSvc += t.serviceTime;
@@ -292,6 +223,8 @@ Result System::calculateSystem() {
         idleInside += t.idleTime;
     }
 
+
+    //getting maximum queue length
     if (numInside > 1)
     {
         for (int i = numInside - 1;i >= 0;i--)
@@ -309,6 +242,7 @@ Result System::calculateSystem() {
         }
     }
 
+    //setting correct idle time
     if(idleInside == 0)
     {
        idleInside = tasks.back().timeServiceEnds;
@@ -319,11 +253,15 @@ Result System::calculateSystem() {
 
     }
 
+
+    //returning results/n (avarage)
     result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size());
 
     return result;
 }
 
+
+//Clearing members
 void System::clear() {
     tasks.clear();
     driveInQueue.clear();
