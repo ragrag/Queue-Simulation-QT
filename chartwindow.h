@@ -34,7 +34,7 @@ class ChartWindow : public QMainWindow
 
 public:
 
-    explicit ChartWindow(QWidget *parent = nullptr, vector < pair<System,Result> > runList = vector <pair <System,Result> > () );
+    explicit ChartWindow(QWidget *parent = nullptr, vector < System > runList = vector <System> () );
     ~ChartWindow();
     template<typename T>  void createPieChart( T mp,string  );
     template<typename T> void createBarChart(T mp,string title);
@@ -120,7 +120,7 @@ private slots:
 
 private:
     Ui::ChartWindow *ui;
-    vector < pair<System,Result> > runList;
+    vector < System > runList;
      HistogramPlot *d_plot;
 };
 

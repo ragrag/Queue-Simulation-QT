@@ -5,7 +5,7 @@
 
 //This window is the GUI for the charts
 
-ChartWindow::ChartWindow(QWidget *parent,vector <pair < System,Result> > runList) :
+ChartWindow::ChartWindow(QWidget *parent,vector <System > runList) :
     QMainWindow(parent),
     ui(new Ui::ChartWindow)
 {
@@ -29,7 +29,7 @@ void ChartWindow::on_svcDPieBtn_2_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[ truncf(v.second.avgSvcDrivein * 10) / 10]++;
+        mp[ truncf(v.result.avgSvcDrivein * 10) / 10]++;
     }
     createPieChart(mp,"Average Service Drive-in");
 
@@ -40,7 +40,7 @@ void ChartWindow::on_svcIPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[ truncf(v.second.avgSvcInside * 10) / 10]++;
+        mp[ truncf(v.result.avgSvcInside * 10) / 10]++;
     }
     createPieChart(mp,"Average Service Inside");
 }
@@ -50,7 +50,7 @@ void ChartWindow::on_waitDPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[ truncf(v.second.avgWaitingDrivein * 10) / 10]++;
+        mp[ truncf(v.result.avgWaitingDrivein * 10) / 10]++;
     }
     createPieChart(mp,"Average Waiting Drive-in");
 }
@@ -60,7 +60,7 @@ void ChartWindow::on_waitIPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[ truncf(v.second.avgWaitingInside * 10) / 10]++;
+        mp[ truncf(v.result.avgWaitingInside * 10) / 10]++;
     }
     createPieChart(mp,"Average Waiting Inside");
 }
@@ -70,7 +70,7 @@ void ChartWindow::on_qlPieBtn_clicked()
     map <int,int> mp;
     for (auto v : runList)
     {
-        mp[ v.second.maxQueueLength]++;
+        mp[ v.result.maxQueueLength]++;
     }
     createPieChart(mp,"Maximum Queue Length Inside");
 }
@@ -80,7 +80,7 @@ void ChartWindow::on_probPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.probInside*100)/100]++;
+        mp[truncf(v.result.probInside*100)/100]++;
     }
     createPieChart(mp,"Probability to Go Inside");
 }
@@ -90,7 +90,7 @@ void ChartWindow::on_idlePieBtn_clicked()
     map <int,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.idleTime]++;
+        mp[v.result.idleTime]++;
     }
     createPieChart(mp,"Idle Portion Inside");
 }
@@ -103,7 +103,7 @@ void ChartWindow::on_svcAllPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgSvcAll * 10) / 10]++;
+        mp[truncf(v.result.avgSvcAll * 10) / 10]++;
     }
     createPieChart(mp,"Average Service Time (ALL)");
 }
@@ -114,7 +114,7 @@ void ChartWindow::on_interPieBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgInterArrival * 10) / 10]++;
+        mp[truncf(v.result.avgInterArrival * 10) / 10]++;
     }
     createPieChart(mp,"Average Interarrival Time (ALL)");
 }
@@ -128,7 +128,7 @@ void ChartWindow::on_svcAllBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.avgSvcAll ]++;
+        mp[v.result.avgSvcAll ]++;
     }
     createBarChart(mp,"Average Service Time (ALL)");
 }
@@ -139,7 +139,7 @@ void ChartWindow::on_interBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgInterArrival * 10) / 10]++;
+        mp[truncf(v.result.avgInterArrival * 10) / 10]++;
     }
     createBarChart(mp,"Average Interarrival (ALL)");
 }
@@ -152,7 +152,7 @@ void ChartWindow::on_svcDBarBtn_2_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgSvcDrivein * 10) / 10]++;
+        mp[truncf(v.result.avgSvcDrivein * 10) / 10]++;
     }
     createBarChart(mp,"Average Service Drive-in");
 }
@@ -163,7 +163,7 @@ void ChartWindow::on_svcIBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgSvcInside* 10) / 10]++;
+        mp[truncf(v.result.avgSvcInside* 10) / 10]++;
     }
     createBarChart(mp,"Average Service Inside");
 }
@@ -173,7 +173,7 @@ void ChartWindow::on_waitDBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgWaitingDrivein* 10) / 10]++;
+        mp[truncf(v.result.avgWaitingDrivein* 10) / 10]++;
     }
     createBarChart(mp,"Average Waiting Drive-in");
 }
@@ -183,7 +183,7 @@ void ChartWindow::on_waitIBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgWaitingInside* 10) / 10]++;
+        mp[truncf(v.result.avgWaitingInside* 10) / 10]++;
     }
     createBarChart(mp,"Average Waiting Inside");
 }
@@ -193,7 +193,7 @@ void ChartWindow::on_qlBarBtn_clicked()
     map <int,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.maxQueueLength]++;
+        mp[v.result.maxQueueLength]++;
     }
     createBarChart(mp,"Maximum Queue Length Inside");
 }
@@ -203,7 +203,7 @@ void ChartWindow::on_probBarBtn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.probInside*100)/100]++;
+        mp[truncf(v.result.probInside*100)/100]++;
     }
     createBarChart(mp,"Probability to Go Inside");
 }
@@ -213,7 +213,7 @@ void ChartWindow::on_idleBarBtn_clicked()
     map <int,int> mp;
     for (auto v : runList)
     {
-        mp[v.second.idleTime]++;
+        mp[v.result.idleTime]++;
     }
     createBarChart(mp,"Idle Portion Inside");
 }
@@ -228,7 +228,7 @@ void ChartWindow::on_avgSvcAllHist_Btn_clicked()
     map <float,int> mp;
     for (auto v : runList)
     {
-        mp[truncf(v.second.avgSvcAll * 10) / 10]++;
+        mp[truncf(v.result.avgSvcAll * 10) / 10]++;
     }
 
 
@@ -242,7 +242,7 @@ void ChartWindow::on_avgInterHist_Btn_clicked()
     map <float,int> mp;
        for (auto v : runList)
        {
-           mp[truncf(v.second.avgInterArrival * 10) / 10]++;
+           mp[truncf(v.result.avgInterArrival * 10) / 10]++;
        }
        createHistogram(mp,"Average Interarrival (ALL)");
 }
@@ -252,7 +252,7 @@ void ChartWindow::on_avgSvcDHist_btn_clicked()
     map <float,int> mp;
        for (auto v : runList)
        {
-           mp[truncf(v.second.avgSvcDrivein * 10) / 10]++;
+           mp[truncf(v.result.avgSvcDrivein * 10) / 10]++;
        }
        createHistogram(mp,"Average Service Drive-in");
 }
@@ -262,7 +262,7 @@ void ChartWindow::on_avgSvcIHist_Btn_clicked()
     map <float,int> mp;
        for (auto v : runList)
        {
-           mp[truncf(v.second.avgSvcInside* 10) / 10]++;
+           mp[truncf(v.result.avgSvcInside* 10) / 10]++;
        }
        createHistogram(mp,"Average Service Inside");
 }
@@ -272,7 +272,7 @@ void ChartWindow::on_avgWaitDHist_Btn_clicked()
     map <float,int> mp;
        for (auto v : runList)
        {
-           mp[truncf(v.second.avgWaitingDrivein* 10) / 10]++;
+           mp[truncf(v.result.avgWaitingDrivein* 10) / 10]++;
        }
        createHistogram(mp,"Average Waiting Drive-in");
 }
@@ -282,7 +282,7 @@ void ChartWindow::on_avgWaitI_Btn_clicked()
     map <float,int> mp;
        for (auto v : runList)
        {
-           mp[truncf(v.second.avgWaitingInside* 10) / 10]++;
+           mp[truncf(v.result.avgWaitingInside* 10) / 10]++;
        }
        createHistogram(mp,"Average Waiting Inside");
 }
@@ -292,7 +292,7 @@ void ChartWindow::on_maxQHist_Btn_clicked()
     map <float,int> mp;
       for (auto v : runList)
       {
-          mp[v.second.maxQueueLength]++;
+          mp[v.result.maxQueueLength]++;
       }
       createHistogram(mp,"Maximum Queue Length Inside");
 }
@@ -302,7 +302,7 @@ void ChartWindow::on_probInHist_Btn_clicked()
     map <float,int> mp;
         for (auto v : runList)
         {
-            mp[truncf(v.second.probInside*100)/100]++;
+            mp[truncf(v.result.probInside*100)/100]++;
         }
         createHistogram(mp,"Probability to Go Inside");
 }
@@ -312,7 +312,7 @@ void ChartWindow::on_idleHist_Btn_clicked()
     map <float,int> mp;
         for (auto v : runList)
         {
-            mp[v.second.idleTime]++;
+            mp[v.result.idleTime]++;
         }
         createHistogram(mp,"Idle Portion Inside");
 }
@@ -327,7 +327,7 @@ void ChartWindow::on_svcAllLine_Btn_clicked()
         vector <float> mp;
         for (auto v : runList)
         {
-           mp.push_back(v.second.avgSvcAll);
+           mp.push_back(v.result.avgSvcAll);
         }
         createLineChart(mp,"Average Service Time (ALL)");
 }
@@ -337,7 +337,7 @@ void ChartWindow::on_interLine_Btn_clicked()
         vector <float> mp;
         for (auto v : runList)
         {
-           mp.push_back(v.second.avgInterArrival);
+           mp.push_back(v.result.avgInterArrival);
         }
         createLineChart(mp,"Average Interarrival Time");
 }
@@ -347,7 +347,7 @@ void ChartWindow::on_svcDLineBtn_2_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.avgSvcDrivein);
+       mp.push_back(v.result.avgSvcDrivein);
     }
     createLineChart(mp,"Average Service Time Drive-in");
 }
@@ -357,7 +357,7 @@ void ChartWindow::on_svcILineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.avgSvcInside);
+       mp.push_back(v.result.avgSvcInside);
     }
     createLineChart(mp,"Average Service Time Inside");
 }
@@ -367,7 +367,7 @@ void ChartWindow::on_waitDLineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.avgWaitingDrivein);
+       mp.push_back(v.result.avgWaitingDrivein);
     }
     createLineChart(mp,"Average Waiting Time Drive-in");
 }
@@ -377,7 +377,7 @@ void ChartWindow::on_waitILineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.avgWaitingInside);
+       mp.push_back(v.result.avgWaitingInside);
     }
     createLineChart(mp,"Average Waiting Time Inside");
 }
@@ -387,7 +387,7 @@ void ChartWindow::on_qlLineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.maxQueueLength);
+       mp.push_back(v.result.maxQueueLength);
     }
     createLineChart(mp,"Maximum Queue Length Inside");
 }
@@ -397,7 +397,7 @@ void ChartWindow::on_probLineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.probInside);
+       mp.push_back(v.result.probInside);
     }
     createLineChart(mp,"Probability to Go Inside");
 }
@@ -407,7 +407,7 @@ void ChartWindow::on_idleLineBtn_clicked()
     vector <float> mp;
     for (auto v : runList)
     {
-       mp.push_back(v.second.idleTime);
+       mp.push_back(v.result.idleTime);
     }
     createLineChart(mp,"Idle Portion Inside");
 }

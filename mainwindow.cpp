@@ -42,7 +42,7 @@
 
 //The Main Screen of the program
 
-vector < pair<System,Result> > runList; //A vector of pairs holding <System,Result> pairs
+vector < System > runList; //A vector of pairs holding <System,Result> pairs
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -105,7 +105,7 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
             system.buildSystem(jobs,false);
             Result run = system.calculateSystem();
             finalResult = finalResult+run ;
-            runList.push_back(make_pair(system,run));
+            runList.push_back(system);
              ui->runsList->addItem("Run :"+QString::number(i+1));
 
              system.buildSystem(jobs,true);
@@ -154,7 +154,7 @@ void MainWindow::on_runsBtn_clicked()
 int idx =ui->runsList->currentIndex().row();
 if(idx!=-1)
 {
-      runWindowObj = new runWindow(this,runList[idx].first,runList[idx].second);
+      runWindowObj = new runWindow(this,runList[idx]);
       runWindowObj->show();
 }
 }

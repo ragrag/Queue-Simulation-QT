@@ -255,9 +255,9 @@ Result System::calculateSystem() {
 
 
     //returning results/n (avarage)
-    result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size());
+   return result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size());
 
-    return result;
+
 }
 
 

@@ -5,35 +5,35 @@
 
 
 //A window that displays details about invididual runs
-runWindow::runWindow(QWidget *parent, System sys, Result res) :
+runWindow::runWindow(QWidget *parent, System sys) :
     QMainWindow(parent),
     ui(new Ui::runWindow)
 {
     ui->setupUi(this);
-    this->system = make_pair(sys,res);
+    this->system = sys;
 
 
     QStringList lst;
     lst <<"taskID"<<"Interarrival Time "<<"Arrival time"<<"Service Time"<<"Service Begin "
        <<"Waiting"<<"Service end"<<"Time Spent "<<"Idle";
      ui->driveinTable->setColumnCount(9);
-     ui->driveinTable->setRowCount((int)system.first.driveInQueue.size() >0 ? (int)system.first.driveInQueue.size() : 0);
+     ui->driveinTable->setRowCount((int)system.driveInQueue.size() >0 ? (int)system.driveInQueue.size() : 0);
      ui->driveinTable->setHorizontalHeaderLabels(lst);
      ui->driveinTable->verticalHeader()->setVisible(false);
 
      ui->insideTable->setColumnCount(9);
-     ui->insideTable->setRowCount((int)system.first.insideQueue.size() >0?(int)system.first.insideQueue.size():0);
+     ui->insideTable->setRowCount((int)system.insideQueue.size() >0?(int)system.insideQueue.size():0);
      ui->insideTable->setHorizontalHeaderLabels(lst);
      ui->insideTable->verticalHeader()->setVisible(false);
 
-     for(int i=0;i< max((int) system.first.driveInQueue.size(),(int)system.first.insideQueue.size());i++)
+     for(int i=0;i< max((int) system.driveInQueue.size(),(int)system.insideQueue.size());i++)
      {
          for(int j=0;j<9;j++)
          {
-             if(i<(int)system.first.driveInQueue.size())
-                   ui->driveinTable->setItem(i,j,new QTableWidgetItem(QString::number(system.first.driveInQueue[i][j])));
-             if(i<(int)system.first.insideQueue.size())
-                   ui->insideTable->setItem(i,j,new QTableWidgetItem(QString::number(system.first.insideQueue[i][j])));
+             if(i<(int)system.driveInQueue.size())
+                   ui->driveinTable->setItem(i,j,new QTableWidgetItem(QString::number(system.driveInQueue[i][j])));
+             if(i<(int)system.insideQueue.size())
+                   ui->insideTable->setItem(i,j,new QTableWidgetItem(QString::number(system.insideQueue[i][j])));
          }
 
      }
@@ -48,7 +48,7 @@ runWindow::runWindow(QWidget *parent, System sys, Result res) :
       ui->resultsTable->setVerticalHeaderLabels(lstRes);
       for(int i=0;i<9;i++)
       {
-          ui->resultsTable->setItem(i,0,new QTableWidgetItem( QString::number(system.second[i]) ));
+          ui->resultsTable->setItem(i,0,new QTableWidgetItem( QString::number(system.result[i]) ));
       }
       ui->resultsTable->horizontalHeader()->setVisible(false);
 
@@ -67,13 +67,13 @@ void runWindow::on_svcChartBtn_clicked()
 {
 
     QLineSeries *series = new QLineSeries();
-    for(int i=0;i< system.first.tasks.size();i++ )
+    for(int i=0;i< system.tasks.size();i++ )
     {
-        series->append(i+1,system.first.tasks[i].serviceTime);
+        series->append(i+1,system.tasks[i].serviceTime);
     }
 
     QValueAxis *axisX = new QValueAxis;
-    axisX->setRange(1, system.first.tasks.size());
+    axisX->setRange(1, system.tasks.size());
     axisX->setTickCount(1);
     //axisX->setLabelFormat("%.2f");
 
@@ -102,13 +102,13 @@ void runWindow::on_svcChartBtn_clicked()
 void runWindow::on_arrivalChartBtn_clicked()
 {
     QLineSeries *series = new QLineSeries();
-    for(int i=0;i< system.first.tasks.size();i++ )
+    for(int i=0;i< system.tasks.size();i++ )
     {
-        series->append(i+1,system.first.tasks[i].interarrivalTime);
+        series->append(i+1,system.tasks[i].interarrivalTime);
     }
 
     QValueAxis *axisX = new QValueAxis;
-    axisX->setRange(1, system.first.tasks.size());
+    axisX->setRange(1, system.tasks.size());
     axisX->setTickCount(1);
     //axisX->setLabelFormat("%.2f");
 

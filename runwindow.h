@@ -22,7 +22,7 @@ class runWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit runWindow(QWidget *parent = 0,System sys = System() ,Result res = Result());
+    explicit runWindow(QWidget *parent = 0,System sys = System() );
     ~runWindow();
 
 private slots:
@@ -32,7 +32,7 @@ private slots:
 
 private:
     Ui::runWindow *ui;
-    pair <System,Result> system;
+    System system;
 };
 
 #endif // RUNWINDOW_H

@@ -37,7 +37,7 @@ ProbabilityTable::ProbabilityTable(QWidget *parent,System sys) :
                     ui->serviceTable->setItem(i,j,new QTableWidgetItem(QString::number(system.cumulativeService[i]/100)));
 
                  else
-                        ui->serviceTable->setItem(i,j,new QTableWidgetItem( i == 0 ?  "1 - " + QString::number(system.cumulativeService[i])  :  QString::number(system.cumulativeService[i - 1] + 1) + " - " +( i!=(system.serviceTime.size()+1) ? QString::number(system.cumulativeService[i]) : "00" )));
+                        ui->serviceTable->setItem(i,j,new QTableWidgetItem( i == 0 ?  "1 - " + QString::number(system.cumulativeService[i])  :  QString::number(system.cumulativeService[i - 1] + 1) + " - " +( i!=(system.serviceTime.size()-1) ? QString::number(system.cumulativeService[i]) : "00" )));
              }
 
          }
