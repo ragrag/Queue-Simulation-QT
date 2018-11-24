@@ -241,7 +241,6 @@ Makefile: Simulation.pro F:\qt5.9\5.9.7\msvc2015_64\mkspecs\win32-msvc\qmake.con
 		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Svg.prl \
 		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Charts.prl \
 		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Widgets.prl \
-		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5DataVisualization.prl \
 		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Gui.prl \
 		F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile Simulation.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -411,7 +410,6 @@ F:\qt5.9\5.9.7\msvc2015_64\lib\qtmaind.prl:
 F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Svg.prl:
 F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Charts.prl:
 F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Widgets.prl:
-F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5DataVisualization.prl:
 F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Gui.prl:
 F:\qt5.9\5.9.7\msvc2015_64\lib\Qt5Core.prl:
 qmake: FORCE
