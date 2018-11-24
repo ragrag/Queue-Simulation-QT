@@ -121,7 +121,7 @@ private slots:
 private:
     Ui::ChartWindow *ui;
     vector < System > runList;
-     HistogramPlot *d_plot;
+    HistogramPlot *d_plot;
 };
 
 #endif // CHARTWINDOW_H

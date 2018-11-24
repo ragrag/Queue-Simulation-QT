@@ -6,383 +6,378 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>490</height>
+    <width>839</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Avg Service Time (ALL)</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgSvcAllHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcAllBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcAllLine_Btn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcAllPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Avg Interarrival time (ALL)</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgInterHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="interBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="interLine_Btn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="interPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Avg Service Time Drive-in</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgSvcDHist_btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcDBarBtn_2">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcDLineBtn_2">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcDPieBtn_2">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Avg Service Time Inside</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgSvcIHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcIBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcILineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="svcIPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Avg Waiting Time Drive-in</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgWaitDHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitDBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitDLineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitDPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_10">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Avg Waiting Time inside</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="avgWaitI_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitIBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitILineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="waitIPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_11">
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Max Queue Length inside</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="maxQHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="qlBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="qlLineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="qlPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_12">
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Probability To Go Inside</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="probInHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="probBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="probLineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="probPieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_13">
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Idle Time Inside</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="idleHist_Btn">
-          <property name="text">
-           <string>Histogram</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="idleBarBtn">
-          <property name="text">
-           <string>Frequency Bar Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="idleLineBtn">
-          <property name="text">
-           <string>Line Chart</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="idlePieBtn">
-          <property name="text">
-           <string>Pie Chart</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>821</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Avg Service Time (ALL)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgSvcAllHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcAllBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcAllLine_Btn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcAllPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Avg Interarrival time (ALL)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgInterHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="interBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="interLine_Btn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="interPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Avg Service Time Drive-in</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgSvcDHist_btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcDBarBtn_2">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcDLineBtn_2">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcDPieBtn_2">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Avg Service Time Inside</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgSvcIHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcIBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcILineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="svcIPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Avg Waiting Time Drive-in</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgWaitDHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitDBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitDLineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitDPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Avg Waiting Time inside</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="avgWaitI_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitIBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitILineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="waitIPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Max Queue Length inside</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="maxQHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="qlBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="qlLineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="qlPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Probability To Go Inside</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="probInHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="probBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="probLineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="probPieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Idle Time Inside</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="idleHist_Btn">
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="idleBarBtn">
+         <property name="text">
+          <string>Frequency Bar Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="idleLineBtn">
+         <property name="text">
+          <string>Line Chart</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="idlePieBtn">
+         <property name="text">
+          <string>Pie Chart</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>652</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

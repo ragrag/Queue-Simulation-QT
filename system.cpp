@@ -167,7 +167,7 @@ int System::getArrivalTime()
 int System::getServiceTime()
 {
 
-    int random = rand() % 100 + 1; //ranodm number generation
+    int random = rand() % 100 + 1; //random number generation
 
 
     //checking ranges and returning appropriate number

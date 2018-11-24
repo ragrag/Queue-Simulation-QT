@@ -260,7 +260,7 @@ public:
         customRunsCheckbox->setText(QApplication::translate("MainWindow", "Custom runs/jobs", Q_NULLPTR));
         customRunsText->setPlaceholderText(QApplication::translate("MainWindow", "Runs", Q_NULLPTR));
         customJobsText->setPlaceholderText(QApplication::translate("MainWindow", "Jobs", Q_NULLPTR));
-        beginSimulationBtn->setText(QApplication::translate("MainWindow", "Begin simulation", Q_NULLPTR));
+        beginSimulationBtn->setText(QApplication::translate("MainWindow", "Start Simulation", Q_NULLPTR));
         resultsLabel->setText(QApplication::translate("MainWindow", "Results", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem = resultsTable->verticalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Avg Service Time (ALL)", Q_NULLPTR));

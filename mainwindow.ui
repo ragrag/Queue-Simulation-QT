@@ -79,7 +79,7 @@
     <item>
      <widget class="QPushButton" name="beginSimulationBtn">
       <property name="text">
-       <string>Begin simulation</string>
+       <string>Start Simulation</string>
       </property>
      </widget>
     </item>

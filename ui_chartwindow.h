@@ -17,9 +17,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -29,7 +27,7 @@ class Ui_ChartWindow
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_2;
+    QWidget *widget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -85,43 +83,43 @@ public:
     QPushButton *idleBarBtn;
     QPushButton *idleLineBtn;
     QPushButton *idlePieBtn;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *ChartWindow)
     {
         if (ChartWindow->objectName().isEmpty())
             ChartWindow->setObjectName(QStringLiteral("ChartWindow"));
-        ChartWindow->resize(652, 490);
+        ChartWindow->resize(839, 532);
         centralwidget = new QWidget(ChartWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        verticalLayout_2 = new QVBoxLayout(centralwidget);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout = new QVBoxLayout();
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(11, 11, 821, 511));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(centralwidget);
+        label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
 
-        avgSvcAllHist_Btn = new QPushButton(centralwidget);
+        avgSvcAllHist_Btn = new QPushButton(widget);
         avgSvcAllHist_Btn->setObjectName(QStringLiteral("avgSvcAllHist_Btn"));
 
         horizontalLayout->addWidget(avgSvcAllHist_Btn);
 
-        svcAllBarBtn = new QPushButton(centralwidget);
+        svcAllBarBtn = new QPushButton(widget);
         svcAllBarBtn->setObjectName(QStringLiteral("svcAllBarBtn"));
 
         horizontalLayout->addWidget(svcAllBarBtn);
 
-        svcAllLine_Btn = new QPushButton(centralwidget);
+        svcAllLine_Btn = new QPushButton(widget);
         svcAllLine_Btn->setObjectName(QStringLiteral("svcAllLine_Btn"));
 
         horizontalLayout->addWidget(svcAllLine_Btn);
 
-        svcAllPieBtn = new QPushButton(centralwidget);
+        svcAllPieBtn = new QPushButton(widget);
         svcAllPieBtn->setObjectName(QStringLiteral("svcAllPieBtn"));
 
         horizontalLayout->addWidget(svcAllPieBtn);
@@ -131,27 +129,27 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_9 = new QLabel(centralwidget);
+        label_9 = new QLabel(widget);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         horizontalLayout_3->addWidget(label_9);
 
-        avgInterHist_Btn = new QPushButton(centralwidget);
+        avgInterHist_Btn = new QPushButton(widget);
         avgInterHist_Btn->setObjectName(QStringLiteral("avgInterHist_Btn"));
 
         horizontalLayout_3->addWidget(avgInterHist_Btn);
 
-        interBarBtn = new QPushButton(centralwidget);
+        interBarBtn = new QPushButton(widget);
         interBarBtn->setObjectName(QStringLiteral("interBarBtn"));
 
         horizontalLayout_3->addWidget(interBarBtn);
 
-        interLine_Btn = new QPushButton(centralwidget);
+        interLine_Btn = new QPushButton(widget);
         interLine_Btn->setObjectName(QStringLiteral("interLine_Btn"));
 
         horizontalLayout_3->addWidget(interLine_Btn);
 
-        interPieBtn = new QPushButton(centralwidget);
+        interPieBtn = new QPushButton(widget);
         interPieBtn->setObjectName(QStringLiteral("interPieBtn"));
 
         horizontalLayout_3->addWidget(interPieBtn);
@@ -161,27 +159,27 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_8 = new QLabel(centralwidget);
+        label_8 = new QLabel(widget);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         horizontalLayout_2->addWidget(label_8);
 
-        avgSvcDHist_btn = new QPushButton(centralwidget);
+        avgSvcDHist_btn = new QPushButton(widget);
         avgSvcDHist_btn->setObjectName(QStringLiteral("avgSvcDHist_btn"));
 
         horizontalLayout_2->addWidget(avgSvcDHist_btn);
 
-        svcDBarBtn_2 = new QPushButton(centralwidget);
+        svcDBarBtn_2 = new QPushButton(widget);
         svcDBarBtn_2->setObjectName(QStringLiteral("svcDBarBtn_2"));
 
         horizontalLayout_2->addWidget(svcDBarBtn_2);
 
-        svcDLineBtn_2 = new QPushButton(centralwidget);
+        svcDLineBtn_2 = new QPushButton(widget);
         svcDLineBtn_2->setObjectName(QStringLiteral("svcDLineBtn_2"));
 
         horizontalLayout_2->addWidget(svcDLineBtn_2);
 
-        svcDPieBtn_2 = new QPushButton(centralwidget);
+        svcDPieBtn_2 = new QPushButton(widget);
         svcDPieBtn_2->setObjectName(QStringLiteral("svcDPieBtn_2"));
 
         horizontalLayout_2->addWidget(svcDPieBtn_2);
@@ -191,27 +189,27 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        label_2 = new QLabel(centralwidget);
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_8->addWidget(label_2);
 
-        avgSvcIHist_Btn = new QPushButton(centralwidget);
+        avgSvcIHist_Btn = new QPushButton(widget);
         avgSvcIHist_Btn->setObjectName(QStringLiteral("avgSvcIHist_Btn"));
 
         horizontalLayout_8->addWidget(avgSvcIHist_Btn);
 
-        svcIBarBtn = new QPushButton(centralwidget);
+        svcIBarBtn = new QPushButton(widget);
         svcIBarBtn->setObjectName(QStringLiteral("svcIBarBtn"));
 
         horizontalLayout_8->addWidget(svcIBarBtn);
 
-        svcILineBtn = new QPushButton(centralwidget);
+        svcILineBtn = new QPushButton(widget);
         svcILineBtn->setObjectName(QStringLiteral("svcILineBtn"));
 
         horizontalLayout_8->addWidget(svcILineBtn);
 
-        svcIPieBtn = new QPushButton(centralwidget);
+        svcIPieBtn = new QPushButton(widget);
         svcIPieBtn->setObjectName(QStringLiteral("svcIPieBtn"));
 
         horizontalLayout_8->addWidget(svcIPieBtn);
@@ -221,27 +219,27 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        label_3 = new QLabel(centralwidget);
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         horizontalLayout_9->addWidget(label_3);
 
-        avgWaitDHist_Btn = new QPushButton(centralwidget);
+        avgWaitDHist_Btn = new QPushButton(widget);
         avgWaitDHist_Btn->setObjectName(QStringLiteral("avgWaitDHist_Btn"));
 
         horizontalLayout_9->addWidget(avgWaitDHist_Btn);
 
-        waitDBarBtn = new QPushButton(centralwidget);
+        waitDBarBtn = new QPushButton(widget);
         waitDBarBtn->setObjectName(QStringLiteral("waitDBarBtn"));
 
         horizontalLayout_9->addWidget(waitDBarBtn);
 
-        waitDLineBtn = new QPushButton(centralwidget);
+        waitDLineBtn = new QPushButton(widget);
         waitDLineBtn->setObjectName(QStringLiteral("waitDLineBtn"));
 
         horizontalLayout_9->addWidget(waitDLineBtn);
 
-        waitDPieBtn = new QPushButton(centralwidget);
+        waitDPieBtn = new QPushButton(widget);
         waitDPieBtn->setObjectName(QStringLiteral("waitDPieBtn"));
 
         horizontalLayout_9->addWidget(waitDPieBtn);
@@ -251,27 +249,27 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        label_4 = new QLabel(centralwidget);
+        label_4 = new QLabel(widget);
         label_4->setObjectName(QStringLiteral("label_4"));
 
         horizontalLayout_10->addWidget(label_4);
 
-        avgWaitI_Btn = new QPushButton(centralwidget);
+        avgWaitI_Btn = new QPushButton(widget);
         avgWaitI_Btn->setObjectName(QStringLiteral("avgWaitI_Btn"));
 
         horizontalLayout_10->addWidget(avgWaitI_Btn);
 
-        waitIBarBtn = new QPushButton(centralwidget);
+        waitIBarBtn = new QPushButton(widget);
         waitIBarBtn->setObjectName(QStringLiteral("waitIBarBtn"));
 
         horizontalLayout_10->addWidget(waitIBarBtn);
 
-        waitILineBtn = new QPushButton(centralwidget);
+        waitILineBtn = new QPushButton(widget);
         waitILineBtn->setObjectName(QStringLiteral("waitILineBtn"));
 
         horizontalLayout_10->addWidget(waitILineBtn);
 
-        waitIPieBtn = new QPushButton(centralwidget);
+        waitIPieBtn = new QPushButton(widget);
         waitIPieBtn->setObjectName(QStringLiteral("waitIPieBtn"));
 
         horizontalLayout_10->addWidget(waitIPieBtn);
@@ -281,27 +279,27 @@ public:
 
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        label_5 = new QLabel(centralwidget);
+        label_5 = new QLabel(widget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_11->addWidget(label_5);
 
-        maxQHist_Btn = new QPushButton(centralwidget);
+        maxQHist_Btn = new QPushButton(widget);
         maxQHist_Btn->setObjectName(QStringLiteral("maxQHist_Btn"));
 
         horizontalLayout_11->addWidget(maxQHist_Btn);
 
-        qlBarBtn = new QPushButton(centralwidget);
+        qlBarBtn = new QPushButton(widget);
         qlBarBtn->setObjectName(QStringLiteral("qlBarBtn"));
 
         horizontalLayout_11->addWidget(qlBarBtn);
 
-        qlLineBtn = new QPushButton(centralwidget);
+        qlLineBtn = new QPushButton(widget);
         qlLineBtn->setObjectName(QStringLiteral("qlLineBtn"));
 
         horizontalLayout_11->addWidget(qlLineBtn);
 
-        qlPieBtn = new QPushButton(centralwidget);
+        qlPieBtn = new QPushButton(widget);
         qlPieBtn->setObjectName(QStringLiteral("qlPieBtn"));
 
         horizontalLayout_11->addWidget(qlPieBtn);
@@ -311,27 +309,27 @@ public:
 
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
-        label_6 = new QLabel(centralwidget);
+        label_6 = new QLabel(widget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         horizontalLayout_12->addWidget(label_6);
 
-        probInHist_Btn = new QPushButton(centralwidget);
+        probInHist_Btn = new QPushButton(widget);
         probInHist_Btn->setObjectName(QStringLiteral("probInHist_Btn"));
 
         horizontalLayout_12->addWidget(probInHist_Btn);
 
-        probBarBtn = new QPushButton(centralwidget);
+        probBarBtn = new QPushButton(widget);
         probBarBtn->setObjectName(QStringLiteral("probBarBtn"));
 
         horizontalLayout_12->addWidget(probBarBtn);
 
-        probLineBtn = new QPushButton(centralwidget);
+        probLineBtn = new QPushButton(widget);
         probLineBtn->setObjectName(QStringLiteral("probLineBtn"));
 
         horizontalLayout_12->addWidget(probLineBtn);
 
-        probPieBtn = new QPushButton(centralwidget);
+        probPieBtn = new QPushButton(widget);
         probPieBtn->setObjectName(QStringLiteral("probPieBtn"));
 
         horizontalLayout_12->addWidget(probPieBtn);
@@ -341,27 +339,27 @@ public:
 
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
-        label_7 = new QLabel(centralwidget);
+        label_7 = new QLabel(widget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         horizontalLayout_13->addWidget(label_7);
 
-        idleHist_Btn = new QPushButton(centralwidget);
+        idleHist_Btn = new QPushButton(widget);
         idleHist_Btn->setObjectName(QStringLiteral("idleHist_Btn"));
 
         horizontalLayout_13->addWidget(idleHist_Btn);
 
-        idleBarBtn = new QPushButton(centralwidget);
+        idleBarBtn = new QPushButton(widget);
         idleBarBtn->setObjectName(QStringLiteral("idleBarBtn"));
 
         horizontalLayout_13->addWidget(idleBarBtn);
 
-        idleLineBtn = new QPushButton(centralwidget);
+        idleLineBtn = new QPushButton(widget);
         idleLineBtn->setObjectName(QStringLiteral("idleLineBtn"));
 
         horizontalLayout_13->addWidget(idleLineBtn);
 
-        idlePieBtn = new QPushButton(centralwidget);
+        idlePieBtn = new QPushButton(widget);
         idlePieBtn->setObjectName(QStringLiteral("idlePieBtn"));
 
         horizontalLayout_13->addWidget(idlePieBtn);
@@ -369,17 +367,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_13);
 
-
-        verticalLayout_2->addLayout(verticalLayout);
-
         ChartWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(ChartWindow);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 652, 26));
-        ChartWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(ChartWindow);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
-        ChartWindow->setStatusBar(statusbar);
 
         retranslateUi(ChartWindow);
 

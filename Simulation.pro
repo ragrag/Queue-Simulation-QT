@@ -8,7 +8,7 @@
 include (C:\Qwt-6.1.3\features\qwt.prf)
 #include (C:\qwt-6.1.3\qwtbuild.pri)
 
-QT       += core gui charts datavisualization
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

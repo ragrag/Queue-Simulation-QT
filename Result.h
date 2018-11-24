@@ -15,10 +15,10 @@ public:
     float avgSvcAll;
     float avgInterArrival;
     void clear();
-    Result operator+(Result);
-    Result operator/(int);
     Result();
     Result(float, float, float,float ,int, float, int,float,float);
+    Result operator+(Result);
+    Result operator/(int);
     float operator[] (int i);
     ~Result();
 };
