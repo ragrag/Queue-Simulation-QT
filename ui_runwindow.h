@@ -35,6 +35,7 @@ public:
     QTableWidget *insideTable;
     QLabel *resultsLabel;
     QTableWidget *resultsTable;
+    QPushButton *singleBtn;
     QHBoxLayout *horizontalLayout;
     QPushButton *svcChartBtn;
     QPushButton *arrivalChartBtn;
@@ -81,6 +82,11 @@ public:
 
         verticalLayout->addWidget(resultsTable);
 
+        singleBtn = new QPushButton(centralwidget);
+        singleBtn->setObjectName(QStringLiteral("singleBtn"));
+
+        verticalLayout->addWidget(singleBtn);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
 
@@ -109,6 +115,7 @@ public:
         driveinLabel->setText(QApplication::translate("runWindow", "Drive in Queue", Q_NULLPTR));
         insideLabel->setText(QApplication::translate("runWindow", "Inside Queue", Q_NULLPTR));
         resultsLabel->setText(QApplication::translate("runWindow", "Results", Q_NULLPTR));
+        singleBtn->setText(QApplication::translate("runWindow", "View In a Single Table", Q_NULLPTR));
         svcChartBtn->setText(QApplication::translate("runWindow", "Service Times Line Chart", Q_NULLPTR));
         arrivalChartBtn->setText(QApplication::translate("runWindow", "Interarrival Times Line Chart", Q_NULLPTR));
     } // retranslateUi

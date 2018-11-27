@@ -55,6 +55,13 @@
      <widget class="QTableWidget" name="resultsTable"/>
     </item>
     <item>
+     <widget class="QPushButton" name="singleBtn">
+      <property name="text">
+       <string>View In a Single Table</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout"/>
     </item>
     <item>

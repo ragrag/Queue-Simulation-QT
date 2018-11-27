@@ -30,6 +30,8 @@ private slots:
 
     void on_arrivalChartBtn_clicked();
 
+    void on_singleBtn_clicked();
+
 private:
     Ui::runWindow *ui;
     System system;

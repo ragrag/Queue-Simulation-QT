@@ -147,7 +147,7 @@ public:
         ___qtablewidgetitem8->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem9 = arrivalTable->verticalHeaderItem(5);
         ___qtablewidgetitem9->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
-        label->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.5", Q_NULLPTR));
+        label->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.51", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem10 = serviceTable->horizontalHeaderItem(0);
         ___qtablewidgetitem10->setText(QApplication::translate("ProbabilityTable", "Service Time", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem11 = serviceTable->horizontalHeaderItem(1);
@@ -164,7 +164,7 @@ public:
         ___qtablewidgetitem16->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem17 = serviceTable->verticalHeaderItem(3);
         ___qtablewidgetitem17->setText(QApplication::translate("ProbabilityTable", "New Row", Q_NULLPTR));
-        label_2->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.5", Q_NULLPTR));
+        label_2->setText(QApplication::translate("ProbabilityTable", "Theoretical Average: 2.32", Q_NULLPTR));
     } // retranslateUi
 
 };

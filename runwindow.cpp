@@ -2,7 +2,7 @@
 #include "ui_runwindow.h"
 #include <algorithm>
 
-
+bool inside[1000];
 
 //A window that displays details about invididual runs
 runWindow::runWindow(QWidget *parent, System sys) :
@@ -33,7 +33,10 @@ runWindow::runWindow(QWidget *parent, System sys) :
              if(i<(int)system.driveInQueue.size())
                    ui->driveinTable->setItem(i,j,new QTableWidgetItem(QString::number(system.driveInQueue[i][j])));
              if(i<(int)system.insideQueue.size())
+             {
                    ui->insideTable->setItem(i,j,new QTableWidgetItem(QString::number(system.insideQueue[i][j])));
+                   inside[system.insideQueue[i].taskID] = true;
+             }
          }
 
      }
@@ -131,5 +134,39 @@ void runWindow::on_arrivalChartBtn_clicked()
 
     chartWindow->resize(1000,400);
     chartWindow->show();
+
+}
+
+void runWindow::on_singleBtn_clicked()
+{
+
+
+
+    ui->driveinTable->clear();
+    QStringList lst;
+    lst <<"taskID"<<"Interarrival Time "<<"Arrival time"<<"Service Time"<<"Service Begin "
+       <<"Waiting"<<"Service end"<<"Time Spent "<<"Idle"<<"Queue";
+     ui->driveinTable->setColumnCount(10);
+     ui->driveinTable->setRowCount((int)system.tasks.size());
+     ui->driveinTable->setHorizontalHeaderLabels(lst);
+     ui->driveinTable->verticalHeader()->setVisible(false);
+
+
+
+     ui->insideTable->hide();
+     ui->insideLabel->hide();
+     for(int i=0;i< (int) system.tasks.size();i++)
+     {
+         for(int j=0;j<10;j++)
+         {
+
+                if(j<9)
+                   ui->driveinTable->setItem(i,j,new QTableWidgetItem(QString::number(system.tasks[i][j])));
+                else
+                    ui->driveinTable->setItem(i,j,new QTableWidgetItem(inside[system.tasks[i].taskID]? "Inside" :"Drive-in"));
+         }
+
+     }
+
 
 }
