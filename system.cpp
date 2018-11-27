@@ -69,7 +69,7 @@ void System::buildSystem(int samples,bool twocars)
     for (int i = 0;i < samples;i++)
     {
 
-        int interArrivalTime = getArrivalTime();
+        int interArrivalTime =getArrivalTime();
 
         int serviceTime = getServiceTime();
 
@@ -85,7 +85,7 @@ void System::buildSystem(int samples,bool twocars)
         }
 
         //Check if its the second job (or third if twocar drivein queue), or if the condition for the customer to go in the drivein queue is met
-        else if  ( (twocars? (i == 1 || i==2 ): i == 1 ) || ( (twocars? i>2: i > 1) && arrival > driveInQueue[driveInQueue.size()- (twocars? 3:2)].timeServiceEnds))
+        else if  ( (twocars? (i == 1 || i==2 ): i == 1 ) || ( (twocars? i>2: i > 1) && arrival >= driveInQueue[driveInQueue.size()- (twocars? 3:2)].timeServiceEnds))
         {
 
             int serviceBegin;
@@ -99,7 +99,7 @@ void System::buildSystem(int samples,bool twocars)
             else waiting = driveInQueue.back().timeServiceEnds - arrival;
 
             int serviceEnd = serviceBegin + serviceTime;
-            int timeSpent = serviceEnd - arrival;
+            int timeSpent = serviceEnd -    arrival;
             int idle = driveInQueue.back().timeServiceEnds > arrival ? 0 : arrival - driveInQueue.back().timeServiceEnds;
             driveInQueue.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
             tasks.push_back(Task(i + 1, interArrivalTime, arrival, serviceTime, serviceBegin, waiting, serviceEnd, timeSpent, idle));
