@@ -123,8 +123,9 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
 
  for(int i=0;i<9;i++)
  {
-     ui->resultsTable->setItem(i,0,new QTableWidgetItem(   QString::number(finalResult[i])  ));
+     ui->resultsTable->setItem(i,0,new QTableWidgetItem(i!=8? QString::number(finalResult[i]) :(QString::number(finalResult[i])) +"%"));
  }
+
   ui->resultsTable->setItem(9,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
   ui->resultsTable->setItem(10,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
  ui->resultsTable->horizontalHeader()->setVisible(false);

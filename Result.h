@@ -9,14 +9,15 @@ public:
     float avgSvcInside;
     float avgWaitingDrivein;
     float avgWaitingInside;
-    int maxQueueLength;
+    float maxQueueLength;
     float probInside;
     int idleTime;
     float avgSvcAll;
     float avgInterArrival;
+    float probToGoInside;
     void clear();
     Result();
-    Result(float, float, float,float ,int, float, int,float,float);
+    Result(float, float, float,float ,float, float, int,float,float,float);
     Result operator+(Result);
     Result operator/(int);
     float operator[] (int i);

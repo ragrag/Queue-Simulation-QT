@@ -144,6 +144,14 @@ void System::buildSystem(int samples,bool twocars)
 
 }
 
+
+
+
+
+
+
+
+
 //getting random interarrival time
 int System::getArrivalTime()
 {
@@ -198,15 +206,16 @@ Result System::calculateSystem() {
 
     float insideSvc = 0;
     float insideWaiting = 0;
-    int idleInside = 0;
+    float idleInside = 0;
     int maxInsideQueue = 1;
 
     int numDrivein =(int) driveInQueue.size();
     int numInside = (int)insideQueue.size();
-    float probInside =(float) ((float)numInside*((float) 100/tasks.size()) )/100;
+    float probInside = ((float)insideQueue.size()/(float)tasks.size() );
+    float waitInside =0;
     float svcAll = 0;
     float interArrivalAll = 0;
-
+    float totalInside =max(driveInQueue.back().timeServiceEnds,insideQueue.back().timeServiceEnds);
     //accumilating values
     for (auto t : driveInQueue)
     {
@@ -221,6 +230,8 @@ Result System::calculateSystem() {
         insideWaiting += t.waitingTime;
         svcAll += t.serviceTime;
         idleInside += t.idleTime;
+        if (t.waitingTime >0)
+            waitInside++;
     }
 
 
@@ -254,8 +265,13 @@ Result System::calculateSystem() {
     }
 
 
+    if(idleInside!=0)
+        idleInside = (float)(idleInside/totalInside)*100;
+
+  float probWaitInside = (float)waitInside/(float)numInside;
+
     //returning results/n (avarage)
-   return result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue, probInside,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size());
+   return result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue,probWaitInside /*probInside*/,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size(),probInside);
 
 
 }

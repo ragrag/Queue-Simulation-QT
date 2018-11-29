@@ -9,7 +9,7 @@ Result::Result()
 
 
 //Constructor
-Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,float avgWaitingInside, int maxQueueLength, float probInside,int idleTime,float avgSvcAll,float avgInterArrival)
+Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,float avgWaitingInside, float maxQueueLength, float probInside,int idleTime,float avgSvcAll,float avgInterArrival,float probToGoInside)
 {
     this-> avgSvcDrivein= avgDriveinSvc;
     this->avgSvcInside= avgInsideSvc;
@@ -20,6 +20,7 @@ Result::Result(float avgDriveinSvc,float avgInsideSvc,float avgWaitingDrivein,fl
     this->idleTime= idleTime;
     this->avgSvcAll = avgSvcAll;
     this->avgInterArrival = avgInterArrival;
+    this->probToGoInside = probToGoInside;
 }
 
 
@@ -36,6 +37,7 @@ float Result::operator[] (int i)
   case 6: return (float) maxQueueLength;
   case 7: return probInside;
   case 8: return (float) idleTime;
+  case 9 : return probToGoInside;
 
   default: return -1;
   }
@@ -51,14 +53,14 @@ Result Result::operator+(Result other)
 
     return Result(avgSvcDrivein + other.avgSvcDrivein, avgSvcInside + other.avgSvcInside,
         avgWaitingDrivein + other.avgWaitingDrivein, avgWaitingInside + other.avgWaitingInside ,maxQueueLength + other.maxQueueLength, probInside + other.probInside, idleTime + other.idleTime,
-                  avgSvcAll+other.avgSvcAll,avgInterArrival +other.avgInterArrival);
+                  avgSvcAll+other.avgSvcAll,avgInterArrival +other.avgInterArrival,probToGoInside+other.probToGoInside);
 
 }
 
 //Overloaded / operator for deviding a result by a number
 Result Result::operator/(int n)
 {
-    return Result(avgSvcDrivein/n , avgSvcInside/n, avgWaitingDrivein / n, avgWaitingInside / n, maxQueueLength/n, probInside/n, idleTime/n,avgSvcAll/n,avgInterArrival/n);
+    return Result(avgSvcDrivein/n , avgSvcInside/n, avgWaitingDrivein / n, avgWaitingInside / n, maxQueueLength/n, probInside/n, idleTime/n,avgSvcAll/n,avgInterArrival/n,probToGoInside/n);
 }
 
 
@@ -75,6 +77,7 @@ void Result::clear()
     idleTime = 0;
     avgSvcAll = 0;
     avgInterArrival = 0;
+    probToGoInside = 0;
 }
 
 
