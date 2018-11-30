@@ -525,7 +525,6 @@ template<typename T> void ChartWindow::createBarChart(T mp,string title) //Creat
 
 for (auto v:mp)
 {
-cout<<(float)v.first<<endl;
     *set0<<(float)v.second;
  categories<<QString::number((float)v.first);
 }

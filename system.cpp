@@ -151,14 +151,15 @@ void System::buildSystem(int samples,bool twocars)
 
 
 
-
 //getting random interarrival time
 int System::getArrivalTime()
 {
     int random = rand() % 100 + 1; //random number generation
     //Checking ranges and returning appropriate number
+
     for (int i = 0;i < cumulativeArrival.size();i++)
     {
+
         if (i == 0)
         {
             if (random >= 1 && random <= cumulativeArrival[i])

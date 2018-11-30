@@ -93,7 +93,7 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
         }
 
         System system = System(arrivalTime, probabilityArrival, serviceTime, probabilityService);//System Initilization
-        cout << endl;
+
 
 
         Result finalResult= Result();
@@ -121,13 +121,15 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
         //Displaying
         ui->resultsLabel->setText("Results : "+QString::number(runs) +" runs, "+QString::number(jobs)+" Jobs");
 
+        ui->resultsTable->setItem(0,0,new QTableWidgetItem(  QString::number(2.51) ));
+        ui->resultsTable->setItem(1,0,new QTableWidgetItem(  QString::number(2.32) ));
  for(int i=0;i<9;i++)
  {
-     ui->resultsTable->setItem(i,0,new QTableWidgetItem(i!=8? QString::number(finalResult[i]) :(QString::number(finalResult[i])) +"%"));
+     ui->resultsTable->setItem(i+2,0,new QTableWidgetItem(i+2!=10? QString::number(finalResult[i]) :(QString::number(finalResult[i])) +"%"));
  }
 
-  ui->resultsTable->setItem(9,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
-  ui->resultsTable->setItem(10,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
+  ui->resultsTable->setItem(11,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
+  ui->resultsTable->setItem(12,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
  ui->resultsTable->horizontalHeader()->setVisible(false);
 
 
