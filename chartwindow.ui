@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>11</x>
@@ -302,7 +302,7 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Probability To Go Inside</string>
+          <string>Probability To Wait Inside</string>
          </property>
         </widget>
        </item>

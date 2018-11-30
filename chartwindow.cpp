@@ -82,7 +82,7 @@ void ChartWindow::on_probPieBtn_clicked()
     {
         mp[truncf(v.result.probInside*100)/100]++;
     }
-    createPieChart(mp,"Probability to Go Inside");
+    createPieChart(mp,"Probability to Wait Inside");
 }
 
 void ChartWindow::on_idlePieBtn_clicked()
@@ -205,7 +205,7 @@ void ChartWindow::on_probBarBtn_clicked()
     {
         mp[truncf(v.result.probInside*100)/100]++;
     }
-    createBarChart(mp,"Probability to Go Inside");
+    createBarChart(mp,"Probability to Wait Inside");
 }
 
 void ChartWindow::on_idleBarBtn_clicked()
@@ -304,7 +304,7 @@ void ChartWindow::on_probInHist_Btn_clicked()
         {
             mp[truncf(v.result.probInside*100)/100]++;
         }
-        createHistogram(mp,"Probability to Go Inside");
+        createHistogram(mp,"Probability to Wait Inside");
 }
 
 void ChartWindow::on_idleHist_Btn_clicked()
@@ -399,7 +399,7 @@ void ChartWindow::on_probLineBtn_clicked()
     {
        mp.push_back(v.result.probInside);
     }
-    createLineChart(mp,"Probability to Go Inside");
+    createLineChart(mp,"Probability to Wait Inside");
 }
 
 void ChartWindow::on_idleLineBtn_clicked()

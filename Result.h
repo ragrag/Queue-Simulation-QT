@@ -15,9 +15,10 @@ public:
     float avgSvcAll;
     float avgInterArrival;
     float probToGoInside;
+    float avgTimeSpent;
     void clear();
     Result();
-    Result(float, float, float,float ,float, float, int,float,float,float);
+    Result(float, float, float,float ,float, float, int,float,float,float,float);
     Result operator+(Result);
     Result operator/(int);
     float operator[] (int i);

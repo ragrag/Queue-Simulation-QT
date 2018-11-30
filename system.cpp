@@ -209,6 +209,7 @@ Result System::calculateSystem() {
     float insideWaiting = 0;
     float idleInside = 0;
     int maxInsideQueue = 1;
+    float timeSpent = 0;
 
     int numDrivein =(int) driveInQueue.size();
     int numInside = (int)insideQueue.size();
@@ -224,6 +225,7 @@ Result System::calculateSystem() {
         driveinWaiting += t.waitingTime;
         svcAll += t.serviceTime;
         interArrivalAll += t.interarrivalTime;
+        timeSpent += t.timeSpentInSystem;
     }
     for (auto t : insideQueue)
     {
@@ -233,8 +235,9 @@ Result System::calculateSystem() {
         idleInside += t.idleTime;
         if (t.waitingTime >0)
             waitInside++;
+        timeSpent += t.timeSpentInSystem;
     }
-
+timeSpent /= tasks.size();
 
     //getting maximum queue length
     if (numInside > 1)
@@ -272,7 +275,7 @@ Result System::calculateSystem() {
   float probWaitInside = (float)waitInside/(float)numInside;
 
     //returning results/n (avarage)
-   return result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue,probWaitInside /*probInside*/,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size(),probInside);
+   return result = Result(driveinSvc / numDrivein, numInside ==0 ?0:insideSvc / numInside, driveinWaiting / numDrivein, numInside == 0 ? 0 : insideWaiting / numInside,numInside==0?0: maxInsideQueue,probWaitInside ,   idleInside     ,svcAll/tasks.size(),interArrivalAll/tasks.size(),probInside,timeSpent);
 
 
 }

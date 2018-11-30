@@ -123,13 +123,13 @@ void MainWindow::on_beginSimulationBtn_clicked() //Begin Simulation Button
 
         ui->resultsTable->setItem(0,0,new QTableWidgetItem(  QString::number(2.51) ));
         ui->resultsTable->setItem(1,0,new QTableWidgetItem(  QString::number(2.32) ));
- for(int i=0;i<9;i++)
+ for(int i=0;i<11;i++)
  {
      ui->resultsTable->setItem(i+2,0,new QTableWidgetItem(i+2!=10? QString::number(finalResult[i]) :(QString::number(finalResult[i])) +"%"));
  }
 
-  ui->resultsTable->setItem(11,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
-  ui->resultsTable->setItem(12,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
+  ui->resultsTable->setItem(13,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingDrivein) ));
+  ui->resultsTable->setItem(14,0,new QTableWidgetItem(  QString::number(finalResultTwoCars.avgWaitingInside) ));
  ui->resultsTable->horizontalHeader()->setVisible(false);
 
 

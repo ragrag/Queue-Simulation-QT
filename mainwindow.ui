@@ -107,7 +107,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>300</width>
+            <width>500</width>
             <height>16777215</height>
            </size>
           </property>
@@ -127,7 +127,7 @@
            <bool>true</bool>
           </property>
           <property name="rowCount">
-           <number>13</number>
+           <number>15</number>
           </property>
           <property name="columnCount">
            <number>1</number>
@@ -217,7 +217,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Probability To Wait Inside</string>
+            <string>Probability to Wait Inside</string>
            </property>
            <property name="font">
             <font>
@@ -228,7 +228,7 @@
           </row>
           <row>
            <property name="text">
-            <string>Idle Time Inside</string>
+            <string>Portion of Idle Time Inside</string>
            </property>
            <property name="font">
             <font>
@@ -239,12 +239,22 @@
           </row>
           <row>
            <property name="text">
-            <string>Avg Waiting Drive-in (Two Cars)</string>
+            <string>Probability to Go Inside</string>
            </property>
           </row>
           <row>
            <property name="text">
-            <string>Avg Waiting Inside (Two Cars)</string>
+            <string>Avg Time Spent</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Avg Waiting Drive-in (2 Cars)</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Avg Waiting Inside (2 Cars)</string>
            </property>
           </row>
           <column/>
@@ -265,7 +275,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Probability Tables and Theoretical Averages</string>
+           <string>Probability Tables </string>
           </property>
          </widget>
         </item>

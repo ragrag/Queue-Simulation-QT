@@ -118,8 +118,8 @@ public:
         resultsTable = new QTableWidget(centralWidget);
         if (resultsTable->columnCount() < 1)
             resultsTable->setColumnCount(1);
-        if (resultsTable->rowCount() < 13)
-            resultsTable->setRowCount(13);
+        if (resultsTable->rowCount() < 15)
+            resultsTable->setRowCount(15);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         resultsTable->setVerticalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -161,19 +161,23 @@ public:
         resultsTable->setVerticalHeaderItem(11, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
         resultsTable->setVerticalHeaderItem(12, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        resultsTable->setVerticalHeaderItem(13, __qtablewidgetitem13);
+        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
+        resultsTable->setVerticalHeaderItem(14, __qtablewidgetitem14);
         resultsTable->setObjectName(QStringLiteral("resultsTable"));
         QSizePolicy sizePolicy2(QSizePolicy::Ignored, QSizePolicy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(resultsTable->sizePolicy().hasHeightForWidth());
         resultsTable->setSizePolicy(sizePolicy2);
-        resultsTable->setMaximumSize(QSize(300, 16777215));
+        resultsTable->setMaximumSize(QSize(500, 16777215));
         resultsTable->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         resultsTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         resultsTable->setShowGrid(true);
         resultsTable->setGridStyle(Qt::SolidLine);
         resultsTable->setWordWrap(true);
-        resultsTable->setRowCount(13);
+        resultsTable->setRowCount(15);
         resultsTable->setColumnCount(1);
         resultsTable->horizontalHeader()->setVisible(false);
         resultsTable->horizontalHeader()->setHighlightSections(true);
@@ -285,14 +289,18 @@ public:
         QTableWidgetItem *___qtablewidgetitem8 = resultsTable->verticalHeaderItem(8);
         ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Max Inside Queue Length", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem9 = resultsTable->verticalHeaderItem(9);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Probability To Wait Inside", Q_NULLPTR));
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Probability to Wait Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem10 = resultsTable->verticalHeaderItem(10);
-        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "Idle Time Inside", Q_NULLPTR));
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "Portion of Idle Time Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem11 = resultsTable->verticalHeaderItem(11);
-        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "Avg Waiting Drive-in (Two Cars)", Q_NULLPTR));
+        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "Probability to Go Inside", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem12 = resultsTable->verticalHeaderItem(12);
-        ___qtablewidgetitem12->setText(QApplication::translate("MainWindow", "Avg Waiting Inside (Two Cars)", Q_NULLPTR));
-        probabilityTableBtn->setText(QApplication::translate("MainWindow", "Probability Tables and Theoretical Averages", Q_NULLPTR));
+        ___qtablewidgetitem12->setText(QApplication::translate("MainWindow", "Avg Time Spent", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem13 = resultsTable->verticalHeaderItem(13);
+        ___qtablewidgetitem13->setText(QApplication::translate("MainWindow", "Avg Waiting Drive-in (2 Cars)", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem14 = resultsTable->verticalHeaderItem(14);
+        ___qtablewidgetitem14->setText(QApplication::translate("MainWindow", "Avg Waiting Inside (2 Cars)", Q_NULLPTR));
+        probabilityTableBtn->setText(QApplication::translate("MainWindow", "Probability Tables ", Q_NULLPTR));
         chartsBtn->setText(QApplication::translate("MainWindow", "View Charts", Q_NULLPTR));
         runsLabel->setText(QApplication::translate("MainWindow", "Runs", Q_NULLPTR));
         runsBtn->setText(QApplication::translate("MainWindow", "View Selected Run Data", Q_NULLPTR));
